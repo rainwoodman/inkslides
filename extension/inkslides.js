@@ -11,7 +11,7 @@ var slides = slides || {};
         clipPathElement = document.createElementNS(SVG_NS, "clipPath");
         clipPathElement.setAttribute("id", "clippath-" + svgRoot.getAttribute("id"));
         this.clipRectElement = document.createElementNS(SVG_NS, "rect");
-
+        clipPathElement.appendChild(this.clipRectElement);
         this.viewportElement = document.createElementNS(SVG_NS, "g");
         this.viewportElement.setAttribute("clip-path", 
                 "url(#" + clipPathElement.getAttribute("id") + ")");
@@ -161,7 +161,7 @@ var slides = slides || {};
                 "scale(" + scale + ")" +
                 "translate(" + translateX0 + "," + translateY0 + ")" + 
                 "");
-        viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.slides.length;
+        viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
     };
 
     function sortSlidesByArea(viewer, slides) {
