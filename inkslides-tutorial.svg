@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="inkslides-tutorial.svg"
+   inkslides-control-layer="layer1"
+   inkslides-control-path="path3069">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="356.17668"
+     inkscape:cy="639.5565"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="673"
+     inkscape:window-height="481"
+     inkscape:window-x="449"
+     inkscape:window-y="241"
+     inkscape:window-maximized="0" />
+  <defs
+     id="defs4">
+    <marker
+       orient="auto"
+       id="inkslides-marker">
+      <circle
+         id="circle3794"
+         style="fill: #0f0; fill-opacity:0.5"
+         r="2"
+         cy="0"
+         cx="0" />
+      <circle
+         id="circle3796"
+         r="0.4"
+         cy="0"
+         cx="0" />
+    </marker>
+    <marker
+       orient="auto"
+       id="inkslides-marker-start">
+      <rect
+         id="rect3799"
+         style="fill: #0f0; fill-opacity:0.5"
+         height="4"
+         width="2"
+         y="-2"
+         x="-1" />
+      <circle
+         id="circle3801"
+         r="0.4"
+         cy="0"
+         cx="0" />
+    </marker>
+    <marker
+       orient="auto"
+       id="inkslides-marker-end">
+      <rect
+         id="rect3804"
+         style="fill: #0f0; fill-opacity:0.5"
+         transform="rotate(45)"
+         height="4"
+         width="4"
+         y="-2"
+         x="-2" />
+      <circle
+         id="circle3806"
+         r="0.4"
+         cy="0"
+         cx="0" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     inkscape:label="ControlLayer"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2986"
+       width="1252.1514"
+       height="762.65833"
+       x="-275.61276"
+       y="-23.149031" />
+    <rect
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3008-6"
+       width="557.14288"
+       height="236.22191"
+       x="-223.30531"
+       y="90.289627" />
+    <rect
+       style="opacity:0.52360516999999995;fill:#000000;fill-opacity:0.33636367000000000;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3008-7"
+       width="557.14288"
+       height="248.34375"
+       x="-224.26398"
+       y="431.65436" />
+    <rect
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3008-65"
+       width="557.14288"
+       height="185.71428"
+       x="382.28735"
+       y="80.520119" />
+    <rect
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3008-5"
+       width="557.14288"
+       height="185.71428"
+       x="383.43018"
+       y="298.80582" />
+    <rect
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3008-4"
+       width="557.14288"
+       height="185.71428"
+       x="384.55273"
+       y="508.16913" />
+    <path
+       sodipodi:nodetypes="ccccccccc"
+       style="stroke-linejoin:miter;opacity:1.0;marker-end:url(#inkslides-marker-end);stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);stroke:#0f0;stroke-linecap:butt;stroke-width:5;marker-mid:url(#inkslides-marker);fill:none"
+       d="M -241.32704,15.709536 24.887649,216.47669 21.683884,541.32951 362.54112,231.4599 507.56216,158.74877 358.50051,472.41567 604.36581,399.79903 728.68467,661.97561 773.83035,-1.5786215"
+       id="path3069"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="g3466"
+     inkscape:groupmode="layer"
+     inkscape:label="ControlLayer copy"
+     style="display:inline">
+    <rect
+       y="-23.149031"
+       x="-275.61276"
+       height="762.65833"
+       width="1252.1514"
+       id="rect3468"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="90.289627"
+       x="-223.30531"
+       height="236.22191"
+       width="557.14288"
+       id="rect3470"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="431.65436"
+       x="-224.26398"
+       height="248.34375"
+       width="557.14288"
+       id="rect3472"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="80.520119"
+       x="382.28735"
+       height="185.71428"
+       width="557.14288"
+       id="rect3474"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="298.80582"
+       x="383.43018"
+       height="185.71428"
+       width="557.14288"
+       id="rect3476"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="508.16913"
+       x="384.55273"
+       height="185.71428"
+       width="557.14288"
+       id="rect3478"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3480"
+       d="M -241.32704,15.709536 24.887649,216.47669 21.683884,541.32951 362.54112,231.4599 507.56216,158.74877 358.50051,472.41567 604.36581,399.79903 728.68467,661.97561 773.83035,-1.5786215"
+       style="fill:none;stroke:#00ff00;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);marker-mid:url(#inkslides-marker);marker-end:url(#inkslides-marker-end)"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="420.95166"
+       y="411.44354"
+       id="text3062-6"
+       sodipodi:linespacing="150%"><tspan
+         sodipodi:role="line"
+         id="tspan3064-3"
+         x="420.95166"
+         y="411.44354">The color of the path changes to green.</tspan><tspan
+         id="tspan3367"
+         sodipodi:role="line"
+         x="420.95166"
+         y="441.44354">The extension has been installed.</tspan><tspan
+         id="tspan3442"
+         sodipodi:role="line"
+         x="420.95166"
+         y="471.44354">New pages and stops can still be added.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif Bold"
+       x="-217.14285"
+       y="32.933613"
+       id="text3006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3008"
+         x="-217.14285"
+         y="32.933613">Making Slides in Inkscape with Inkslides</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-216.16243"
+       y="124.20838"
+       id="text3042"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-216.16243"
+         y="124.20838"
+         id="tspan3054">1 Create a control layer.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-217.97826"
+       y="477.98074"
+       id="text3046"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-217.97826"
+         y="477.98074"
+         id="tspan3050">2 Mark <tspan
+   id="tspan3300"
+   style="font-size:28px;font-style:italic">Slide Pages</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="392.01105"
+       y="125.66295"
+       id="text3058"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3060"
+         x="392.01105"
+         y="125.66295">3 Define the sequence of slides</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="393.71594"
+       y="338.56067"
+       id="text3062"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3064"
+         x="393.71594"
+         y="338.56067">4 Select the path, then </tspan><tspan
+         id="tspan3376"
+         sodipodi:role="line"
+         x="393.71594"
+         y="373.56067">   apply <tspan
+   id="tspan3440"
+   style="font-size:28px;font-style:italic">Extensions :: Set up Inkslides</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="387.4505"
+       y="560.49561"
+       id="text3004"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3006"
+         x="387.4505"
+         y="560.49561">5 Save and play the file in a browser.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-188.93581"
+       y="172.32166"
+       id="text3042-7"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3320"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="172.32166">Rectangles and Paths in the control layer decides </tspan><tspan
+         id="tspan3324"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="202.32166">      how the slides are played.</tspan><tspan
+         id="tspan3446"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="232.32166">The control layer is hidden automatically.</tspan><tspan
+         id="tspan3421"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="262.32166">In this example, the gray rectangles and the blue </tspan><tspan
+         id="tspan3423"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="292.32166">path are drawn on the control layer.</tspan><tspan
+         id="tspan3316"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="322.32166" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-191.58583"
+       y="518.13397"
+       id="text3042-7-9"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3304"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="518.13397">Pages are marked with rectanges.</tspan><tspan
+         id="tspan3448"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="548.13397">Pages can overlap.</tspan><tspan
+         id="tspan3433"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="578.13397">When a page is played, the content within the slide </tspan><tspan
+         id="tspan3372"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="608.13397">        page is displayed. </tspan><tspan
+         id="tspan3306"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="638.13397">Any content that is outside the page is clipped.</tspan><tspan
+         id="tspan3290"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="668.13397" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="420.52191"
+       y="158.9866"
+       id="text3042-7-9-6-9"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3272"
+         sodipodi:role="line"
+         x="420.52191"
+         y="158.9866">The sequence is defined by a path</tspan><tspan
+         id="tspan3435"
+         sodipodi:role="line"
+         x="420.52191"
+         y="188.9866">Each node on the play path marks a stop.</tspan><tspan
+         id="tspan3278"
+         sodipodi:role="line"
+         x="420.52191"
+         y="218.9866">At a stop, the <tspan
+   id="tspan3340"
+   style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;writing-mode:lr-tb;text-anchor:start;font-family:Serif;-inkscape-font-specification:Serif">smallest</tspan> slide page </tspan><tspan
+         id="tspan3374"
+         sodipodi:role="line"
+         x="420.52191"
+         y="248.9866">        enclosing the stop is displayed.</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3312"
+       y="414.95593"
+       x="-162.63457"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="414.95593"
+         x="-162.63457"
+         id="tspan3314"
+         sodipodi:role="line" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="418.08191"
+       y="603.18976"
+       id="text3004-8"
+       sodipodi:linespacing="150%"><tspan
+         sodipodi:role="line"
+         id="tspan3006-9"
+         x="418.08191"
+         y="603.18976">To switch between stops, use </tspan><tspan
+         id="tspan3419"
+         sodipodi:role="line"
+         x="418.08191"
+         y="633.18976">       Arrow Keys, Home, End, Page Up / Down</tspan></text>
+  </g>
+  <script
+     id="inkslides-script">var slides = slides || {};
+
+(function(ns) {
+    var SVG_NS = &quot;http://www.w3.org/2000/svg&quot;;
+    var INKSCAPE_NS =&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+    var SLIDES_NS =&quot;http://www.inkscape.org/namespaces/slides&quot;
+
+    ns.SlideViewer = function(svgRoot) {
+        this.svgRoot = svgRoot;
+
+        clipPathElement = document.createElementNS(SVG_NS, &quot;clipPath&quot;);
+        clipPathElement.setAttribute(&quot;id&quot;, &quot;clippath-&quot; + svgRoot.getAttribute(&quot;id&quot;));
+        this.clipRectElement = document.createElementNS(SVG_NS, &quot;rect&quot;);
+        clipPathElement.appendChild(this.clipRectElement);
+        this.viewportElement = document.createElementNS(SVG_NS, &quot;g&quot;);
+        this.viewportElement.setAttribute(&quot;clip-path&quot;, 
+                &quot;url(#&quot; + clipPathElement.getAttribute(&quot;id&quot;) + &quot;)&quot;);
+
+        this.labelElement = document.createElementNS(SVG_NS, &quot;text&quot;);
+        this.labelElement.style.display = &quot;inline&quot;;
+        this.labelElement.style.fillOpacity = '0.50';
+        this.labelElement.setAttribute(&quot;x&quot;, &quot;20&quot;);        
+        this.labelElement.setAttribute(&quot;y&quot;, &quot;20&quot;); 
+        /* reparent all of the inkscape layers */
+        layers = svgRoot.querySelectorAll(&quot;svg&gt;g&quot;);
+        reparentLayers(layers, this.viewportElement);
+
+        /* add the clippath and viewport elements */
+        svgRoot.appendChild(clipPathElement);
+        svgRoot.appendChild(this.viewportElement);
+        svgRoot.appendChild(this.labelElement);
+
+        /* find the control layer */
+        controlLayerId = svgRoot.getAttribute(&quot;inkslides-control-layer&quot;) || &quot;slides-control&quot;;
+        controlPathId = svgRoot.getAttribute(&quot;inkslides-control-path&quot;) || &quot;slides-path&quot;;
+        controlLayer = svgRoot.querySelector(&quot;g[id=&quot; + controlLayerId + &quot;]&quot;);
+        /* hide the control layer */
+        controlLayer.setAttribute(&quot;style&quot;, &quot;visibility:hidden;&quot;);
+
+        this.path = controlLayer.querySelector(&quot;path[id=&quot; + controlPathId +&quot;]&quot;);
+        slides = controlLayer.querySelectorAll(&quot;rect&quot;);
+        this.slides = sortSlidesByArea(this, slides);
+
+        this.controlNodes = getPathNodes(this.path);
+        
+        /* set default size and show the first slide */
+        this.currentSlide = 0;
+
+        this.resize(window.innerWidth, window.innerHeight);
+    };
+
+    ns.SlideViewer.prototype.findSlideByPoint = function(point) {
+        var i;
+        var slide;
+        var bb;
+        x = point.x;
+        y = point.y;
+        for(i = 0; i &lt; this.slides.length; i ++) {
+            slide = this.slides[i];
+            bb = this.getSlideBBox(slide, this.viewportElement);
+            console.log(&quot;matching &quot; + x + &quot;, &quot; + y 
+                     +  &quot; in &quot; + slide.getAttribute('id') 
+                     + &quot;  &quot; +  bb.x + &quot;, &quot; + (1.0 * bb.x + bb.width)
+                     +  &quot;; &quot; + bb.y + &quot;, &quot; + (1.0 * bb.y + bb.height));
+            if (x &gt;= bb.x &amp;&amp; x &lt;= bb.x + bb.width
+            &amp;&amp;  y &gt;= bb.y &amp;&amp; y &lt;= bb.y + bb.height) {
+                return slide;
+            }
+        }
+        console.log(&quot;slide is not found&quot;);
+        return null;
+    };
+
+    ns.SlideViewer.prototype.jumpTo = function(slideid) {
+        if(slideid &gt; this.controlNodes.length - 1)  {
+            slideid = this.controlNodes.length - 1;
+        }
+        if(slideid &lt; 0) {
+            slideid = 0;
+        }
+        this.currentSlide = slideid;
+        viewSlide(this, this.currentSlide);
+    };
+
+    ns.SlideViewer.prototype.nextSlide = function() {
+        if(this.currentSlide == this.controlNodes.length - 1) return;
+        this.currentSlide ++;
+        viewSlide(this, this.currentSlide);
+    };
+
+    ns.SlideViewer.prototype.prevSlide = function() {
+        if(this.currentSlide == 0) return;
+        this.currentSlide --;
+        viewSlide(this, this.currentSlide);
+    };
+
+    ns.SlideViewer.prototype.resize = function(width, height) {
+        this.width = width;
+        this.height = height;
+        viewSlide(this, this.currentSlide);
+    };
+
+    ns.SlideViewer.prototype.showLabel = function() {
+        this.labelElement.style.display = &quot;inline&quot;;
+    };
+
+    ns.SlideViewer.prototype.hideLabel = function() {
+        this.labelElement.style.display = &quot;none&quot;;
+    };
+
+    ns.SlideViewer.prototype.getSlideBBox = function (slide) {
+        /* this will return the BBox in the user coordinate of the
+         * viewport element*/
+        transform = slide.getTransformToElement(this.viewportElement);
+        return applyMatrixToBBox(slide.getBBox(), transform);
+        /*
+        return { 
+                x: slide.getAttribute(&quot;x&quot;) * 1.0,
+                y: slide.getAttribute(&quot;y&quot;) * 1.0,
+                width: slide.getAttribute(&quot;width&quot;) * 1.0,
+                height: slide.getAttribute(&quot;height&quot;) * 1.0
+            };
+        */
+    }
+
+    function viewSlide(viewer, slideid) {
+        var point = viewer.controlNodes[slideid];
+        var slide = viewer.findSlideByPoint(point);
+
+        var scale = 1.0;
+        var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
+
+        var ww = viewer.width;
+        var wh = viewer.height;
+        viewer.svgRoot.setAttribute(&quot;width&quot;, ww);
+        viewer.svgRoot.setAttribute(&quot;height&quot;, wh);
+        var wscale = 1.0 * ww / bbox.width;
+        var hscale = 1.0 * wh / bbox.height;
+        if (wscale &gt; hscale) {
+            scale = hscale;
+        } else {
+            scale = wscale;
+        }
+
+        var cx = bbox.x + bbox.width / 2;
+        var cy = bbox.y + bbox.height / 2;
+
+        var translateX0 = -cx; 
+        var translateY0 = -cy; 
+        
+        var translateX = ww / 2; 
+        var translateY = wh / 2; 
+
+        viewer.clipRectElement.setAttribute(&quot;x&quot;, bbox.x);
+        viewer.clipRectElement.setAttribute(&quot;y&quot;, bbox.y);
+        viewer.clipRectElement.setAttribute(&quot;width&quot;, bbox.width);
+        viewer.clipRectElement.setAttribute(&quot;height&quot;, bbox.height);
+
+        viewer.viewportElement.setAttribute(&quot;transform&quot;,
+                &quot;translate(&quot; + translateX + &quot;,&quot; + translateY + &quot;)&quot; + 
+                &quot;scale(&quot; + scale + &quot;)&quot; +
+                &quot;translate(&quot; + translateX0 + &quot;,&quot; + translateY0 + &quot;)&quot; + 
+                &quot;&quot;);
+        viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + &quot;/&quot; + viewer.controlNodes.length;
+    };
+
+    function sortSlidesByArea(viewer, slides) {
+        var arr = [];
+        var i;
+        var n;
+        for(i = 0, n; n = slides[i]; ++i) arr.push(n);
+        arr.sort(function (a, b) {
+            a1 = viewer.getSlideBBox(a);
+            b1 = viewer.getSlideBBox(b);
+            return a1.width * a1.height - b1.width * b1.height;
+        });
+        return arr;
+    }
+
+    function reparentLayers(layers, viewport) {
+        var i;
+        var childNodes = document.documentElement.childNodes;
+        var element;
+        for (i = 0; i &lt; layers.length; i ++) {
+            element = layers[i];
+            element.parentNode.removeChild(element);
+            viewport.appendChild(element);
+        }
+    }
+
+    function getPathNodes(path) {
+        var j;
+        var tmppath = document.createElementNS(SVG_NS, &quot;path&quot;);
+        var seg;
+        var nodes = [];
+        for(j = 0; j &lt; path.pathSegList.length; j++) {
+            seg = path.pathSegList[j];
+            tmppath.pathSegList.appendItem(seg);
+            nodes.push(path.getPointAtLength(tmppath.getTotalLength()));
+        }
+        return nodes;
+    }
+
+    function applyMatrixToBBox(bbox, m) {
+        return { 
+                x: bbox.x * m.a + bbox.y * m.c + m.e,
+                y: bbox.x * m.b + bbox.y * m.d + m.f,
+                width: bbox.width * m.a + bbox.height * m.c,
+                height: bbox.width * m.b + bbox.height * m.d
+            };
+    }
+})(slides);
+
+window.addEventListener(&quot;load&quot;, function() {
+
+    var SODIPODI_NS =&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+    var svgroot = document.documentElement;
+    var viewer = new slides.SlideViewer(svgroot);
+
+    var namedview = document.getElementsByTagNameNS(SODIPODI_NS, &quot;namedview&quot;)[0];
+    var pagecolor = namedview.getAttribute(&quot;pagecolor&quot;);
+
+    svgroot.style.backgroundColor = pagecolor;
+
+    window.addEventListener(&quot;resize&quot;, function() {
+        viewer.resize(window.innerWidth, window.innerHeight);
+    });
+
+    viewer.showLabel();
+    window.setTimeout(function() {
+        viewer.hideLabel();
+    }, 2000);
+
+    document.addEventListener(&quot;keypress&quot;, function(event) {
+        console.log(event);
+        var keyCode = event.charCode || event.keyCode;
+        viewer.showLabel();
+        switch(keyCode) {
+            case 36: /* Home */
+                viewer.jumpTo(0);
+                break;
+            case 35: /* End */
+                viewer.jumpTo(viewer.slides.length - 1);
+                break;
+            case 32: /* Space */
+            case 34: /* PgDN*/
+            case 39: /* Right */
+            case 40: /* Down */
+                viewer.nextSlide();
+            break;
+            case 33: /* PgUp*/
+            case 37: /* Left */
+            case 38: /* Up */
+                viewer.prevSlide();
+            break;
+        }            
+        window.setTimeout(function() {
+            viewer.hideLabel();
+        }, 2000);
+        event.preventDefault();
+    }, false);
+
+}, false);
+
+</script>
+</svg>
