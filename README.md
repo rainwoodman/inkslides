@@ -22,5 +22,5 @@ Differences from Sozi:
 
  * In inkslides, a slide pages is treated as a whole. There is no way to
    move different layers. Sozi is in principle an animation engine, and supports
-   many animations.
+   many animation effects.
 
