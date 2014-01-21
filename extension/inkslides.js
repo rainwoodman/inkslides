@@ -58,10 +58,11 @@ var slides = slides || {};
         for(i = 0; i < this.slides.length; i ++) {
             slide = this.slides[i];
             bb = this.getSlideBBox(slide, this.viewportElement);
+/*
             console.log("matching " + x + ", " + y 
                      +  " in " + slide.getAttribute('id') 
                      + "  " +  bb.x + ", " + (1.0 * bb.x + bb.width)
-                     +  "; " + bb.y + ", " + (1.0 * bb.y + bb.height));
+                     +  "; " + bb.y + ", " + (1.0 * bb.y + bb.height)); */
             if (x >= bb.x && x <= bb.x + bb.width
             &&  y >= bb.y && y <= bb.y + bb.height) {
                 return slide;
@@ -97,6 +98,8 @@ var slides = slides || {};
     ns.SlideViewer.prototype.resize = function(width, height) {
         this.width = width;
         this.height = height;
+        this.svgRoot.setAttribute("width", width);
+        this.svgRoot.setAttribute("height", height);
         viewSlide(this, this.currentSlide);
     };
 
@@ -132,8 +135,6 @@ var slides = slides || {};
 
         var ww = viewer.width;
         var wh = viewer.height;
-        viewer.svgRoot.setAttribute("width", ww);
-        viewer.svgRoot.setAttribute("height", wh);
         var wscale = 1.0 * ww / bbox.width;
         var hscale = 1.0 * wh / bbox.height;
         if (wscale > hscale) {
@@ -142,33 +143,37 @@ var slides = slides || {};
             scale = wscale;
         }
 
-        var cx = bbox.x + bbox.width / 2;
-        var cy = bbox.y + bbox.height / 2;
+        var cx = bbox.x + bbox.width * 0.5;
+        var cy = bbox.y + bbox.height * 0.5;
 
         var translateX0 = -cx; 
         var translateY0 = -cy; 
         
-        var translateX = ww / 2; 
-        var translateY = wh / 2; 
+        var translateX = parseInt(ww * 0.5); 
+        var translateY = parseInt(wh * 0.5); 
+
+        viewer.viewportElement.style.visibility = "hidden";
 
         viewer.clipRectElement.setAttribute("x", bbox.x);
         viewer.clipRectElement.setAttribute("y", bbox.y);
         viewer.clipRectElement.setAttribute("width", bbox.width);
         viewer.clipRectElement.setAttribute("height", bbox.height);
-
         viewer.viewportElement.setAttribute("transform",
                 "translate(" + translateX + "," + translateY + ")" + 
                 "scale(" + scale + ")" +
                 "translate(" + translateX0 + "," + translateY0 + ")" + 
                 "");
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
+        viewer.viewportElement.style.visibility = "visible";
     };
 
     function sortSlidesByArea(viewer, slides) {
         var arr = [];
         var i;
         var n;
-        for(i = 0, n; n = slides[i]; ++i) arr.push(n);
+        for(i = 0, n; n = slides[i]; ++i) {
+            arr.push(n);
+        }
         arr.sort(function (a, b) {
             a1 = viewer.getSlideBBox(a);
             b1 = viewer.getSlideBBox(b);
@@ -228,11 +233,11 @@ window.addEventListener("load", function() {
 
     viewer.showLabel();
     window.setTimeout(function() {
-        viewer.hideLabel();
+//        viewer.hideLabel();
     }, 2000);
 
     document.addEventListener("keypress", function(event) {
-        console.log(event);
+//        console.log(event);
         var keyCode = event.charCode || event.keyCode;
         viewer.showLabel();
         switch(keyCode) {
