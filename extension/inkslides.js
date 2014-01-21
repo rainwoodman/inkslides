@@ -29,7 +29,6 @@ var slides = slides || {};
         svgRoot.appendChild(clipPathElement);
         svgRoot.appendChild(this.viewportElement);
         svgRoot.appendChild(this.labelElement);
-
         /* find the control layer */
         controlLayerId = svgRoot.getAttribute("inkslides-control-layer") || "slides-control";
         controlPathId = svgRoot.getAttribute("inkslides-control-path") || "slides-path";
@@ -103,8 +102,13 @@ var slides = slides || {};
         viewSlide(this, this.currentSlide);
     };
 
-    ns.SlideViewer.prototype.showLabel = function() {
+    ns.SlideViewer.prototype.showLabel = function(duration) {
         this.labelElement.style.display = "inline";
+        if(duration) {
+            window.setTimeout((function() {
+                this.hideLabel();
+            }).bind(this), duration);
+        } 
     };
 
     ns.SlideViewer.prototype.hideLabel = function() {
@@ -116,14 +120,6 @@ var slides = slides || {};
          * viewport element*/
         transform = slide.getTransformToElement(this.viewportElement);
         return applyMatrixToBBox(slide.getBBox(), transform);
-        /*
-        return { 
-                x: slide.getAttribute("x") * 1.0,
-                y: slide.getAttribute("y") * 1.0,
-                width: slide.getAttribute("width") * 1.0,
-                height: slide.getAttribute("height") * 1.0
-            };
-        */
     }
 
     function viewSlide(viewer, slideid) {
@@ -153,18 +149,22 @@ var slides = slides || {};
         var translateY = parseInt(wh * 0.5); 
 
         viewer.viewportElement.style.visibility = "hidden";
-
-        viewer.clipRectElement.setAttribute("x", bbox.x);
-        viewer.clipRectElement.setAttribute("y", bbox.y);
-        viewer.clipRectElement.setAttribute("width", bbox.width);
-        viewer.clipRectElement.setAttribute("height", bbox.height);
         viewer.viewportElement.setAttribute("transform",
                 "translate(" + translateX + "," + translateY + ")" + 
                 "scale(" + scale + ")" +
                 "translate(" + translateX0 + "," + translateY0 + ")" + 
                 "");
+
+        viewer.clipRectElement.setAttribute("x", bbox.x);
+        viewer.clipRectElement.setAttribute("y", bbox.y);
+        viewer.clipRectElement.setAttribute("width", bbox.width);
+        viewer.clipRectElement.setAttribute("height", bbox.height);
+
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
-        viewer.viewportElement.style.visibility = "visible";
+        window.setTimeout(function() {
+            viewer.viewportElement.style.visibility = "visible";
+        }, 350);
+        
     };
 
     function sortSlidesByArea(viewer, slides) {
@@ -217,7 +217,6 @@ var slides = slides || {};
 })(slides);
 
 window.addEventListener("load", function() {
-
     var SODIPODI_NS ="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     var svgroot = document.documentElement;
     var viewer = new slides.SlideViewer(svgroot);
@@ -231,15 +230,12 @@ window.addEventListener("load", function() {
         viewer.resize(window.innerWidth, window.innerHeight);
     });
 
-    viewer.showLabel();
-    window.setTimeout(function() {
-//        viewer.hideLabel();
-    }, 2000);
+    viewer.showLabel(2000);
 
     document.addEventListener("keypress", function(event) {
 //        console.log(event);
         var keyCode = event.charCode || event.keyCode;
-        viewer.showLabel();
+        viewer.showLabel(2000);
         switch(keyCode) {
             case 36: /* Home */
                 viewer.jumpTo(0);
@@ -259,9 +255,6 @@ window.addEventListener("load", function() {
                 viewer.prevSlide();
             break;
         }            
-        window.setTimeout(function() {
-            viewer.hideLabel();
-        }, 2000);
         event.preventDefault();
     }, false);
 
