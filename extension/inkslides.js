@@ -148,7 +148,7 @@ var slides = slides || {};
         var translateX = parseInt(ww * 0.5); 
         var translateY = parseInt(wh * 0.5); 
 
-        viewer.viewportElement.style.visibility = "hidden";
+//        viewer.viewportElement.style.visibility = "hidden";
         viewer.viewportElement.setAttribute("transform",
                 "translate(" + translateX + "," + translateY + ")" + 
                 "scale(" + scale + ")" +
@@ -161,10 +161,11 @@ var slides = slides || {};
         viewer.clipRectElement.setAttribute("height", bbox.height);
 
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
+/*
         window.setTimeout(function() {
             viewer.viewportElement.style.visibility = "visible";
         }, 350);
-        
+ */       
     };
 
     function sortSlidesByArea(viewer, slides) {
