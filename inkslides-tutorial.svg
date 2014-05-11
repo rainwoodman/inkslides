@@ -28,26 +28,26 @@
      inkscape:cx="-11.518848"
      inkscape:cy="639.5565"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="741"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="754"
+     inkscape:window-height="482"
+     inkscape:window-x="329"
+     inkscape:window-y="285"
+     inkscape:window-maximized="0" />
   <defs
      id="defs4">
     <marker
        orient="auto"
        id="inkslides-marker">
       <circle
-         id="circle3819"
+         id="circle5807"
          style="fill: #0f0; fill-opacity:0.5"
          r="2"
          cy="0"
          cx="0" />
       <circle
-         id="circle3821"
+         id="circle5809"
          r="0.4"
          cy="0"
          cx="0" />
@@ -56,14 +56,14 @@
        orient="auto"
        id="inkslides-marker-start">
       <rect
-         id="rect3824"
+         id="rect5812"
          style="fill: #0f0; fill-opacity:0.5"
          height="4"
          width="2"
          y="-2"
          x="-1" />
       <circle
-         id="circle3826"
+         id="circle5814"
          r="0.4"
          cy="0"
          cx="0" />
@@ -72,7 +72,7 @@
        orient="auto"
        id="inkslides-marker-end">
       <rect
-         id="rect3829"
+         id="rect5817"
          style="fill: #0f0; fill-opacity:0.5"
          transform="rotate(45)"
          height="4"
@@ -80,7 +80,7 @@
          y="-2"
          x="-2" />
       <circle
-         id="circle3831"
+         id="circle5819"
          r="0.4"
          cy="0"
          cx="0" />
@@ -99,326 +99,326 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
-     inkscape:groupmode="layer"
-     inkscape:label="ControlLayer"
-     style="display:inline">
-    <rect
-       y="-23.149031"
-       x="-275.61276"
-       height="762.65833"
-       width="1252.1514"
-       id="rect2986"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <rect
-       y="90.289627"
-       x="-223.30531"
-       height="236.22191"
-       width="557.14288"
-       id="rect3008-6"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <rect
-       y="431.65436"
-       x="-224.26398"
-       height="248.34375"
-       width="557.14288"
-       id="rect3008-7"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <rect
-       y="80.520119"
-       x="382.28735"
-       height="185.71428"
-       width="557.14288"
-       id="rect3008-65"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <rect
-       y="298.80582"
-       x="383.43018"
-       height="185.71428"
-       width="557.14288"
-       id="rect3008-5"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <rect
-       y="508.16913"
-       x="384.55273"
-       height="185.71428"
-       width="557.14288"
-       id="rect3008-4"
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path3069"
-       d="M -241.32704,15.709536 24.887649,216.47669 21.683884,541.32951 362.54112,231.4599 507.56216,158.74877 358.50051,472.41567 604.36581,399.79903 728.68467,661.97561 773.83035,-1.5786215"
-       style="stroke-linejoin:miter;opacity:1.0;marker-end:url(#inkslides-marker-end);stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);stroke:#0f0;stroke-linecap:butt;stroke-width:5;marker-mid:url(#inkslides-marker);fill:none"
-       sodipodi:nodetypes="ccccccccc" />
-  </g>
-  <g
-     sodipodi:insensitive="true"
      style="display:inline"
-     inkscape:label="ControlLayer copy"
+     inkscape:label="ControlLayer"
      inkscape:groupmode="layer"
-     id="g3466">
+     id="layer1">
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3468"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect2986"
        width="1252.1514"
        height="762.65833"
        x="-275.61276"
        y="-23.149031" />
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3470"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect3008-6"
        width="557.14288"
        height="236.22191"
        x="-223.30531"
        y="90.289627" />
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3472"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect3008-7"
        width="557.14288"
        height="248.34375"
        x="-224.26398"
        y="431.65436" />
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3474"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect3008-65"
        width="557.14288"
        height="185.71428"
        x="382.28735"
        y="80.520119" />
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3476"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect3008-5"
        width="557.14288"
        height="185.71428"
        x="383.43018"
        y="298.80582" />
     <rect
-       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3478"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:none"
+       id="rect3008-4"
        width="557.14288"
        height="185.71428"
        x="384.55273"
        y="508.16913" />
     <path
        sodipodi:nodetypes="ccccccccc"
-       style="fill:none;stroke:#00ff00;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);marker-mid:url(#inkslides-marker);marker-end:url(#inkslides-marker-end)"
+       style="stroke-linejoin:miter;opacity:1.0;marker-end:url(#inkslides-marker-end);stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);stroke:#0f0;stroke-linecap:butt;stroke-width:5;marker-mid:url(#inkslides-marker);fill:none"
        d="M -241.32704,15.709536 24.887649,216.47669 21.683884,541.32951 362.54112,231.4599 507.56216,158.74877 358.50051,472.41567 604.36581,399.79903 728.68467,661.97561 773.83035,-1.5786215"
-       id="path3480"
+       id="path3069"
        inkscape:connector-curvature="0" />
   </g>
   <g
-     inkscape:label="Layer"
-     id="layer2"
+     id="g3466"
      inkscape:groupmode="layer"
+     inkscape:label="ControlLayer copy"
      style="display:inline"
      sodipodi:insensitive="true">
-    <text
-       sodipodi:linespacing="150%"
-       id="text3062-6"
-       y="411.44354"
-       x="420.95166"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="411.44354"
-         x="420.95166"
-         id="tspan3064-3"
-         sodipodi:role="line">The color of the path changes to green.</tspan><tspan
-         y="441.44354"
-         x="420.95166"
-         sodipodi:role="line"
-         id="tspan3367">The extension has been installed.</tspan><tspan
-         y="471.44354"
-         x="420.95166"
-         sodipodi:role="line"
-         id="tspan3442">New pages and stops can still be added.</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3006"
-       y="32.933613"
-       x="-217.14285"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif Bold"
-       xml:space="preserve"><tspan
-         y="32.933613"
-         x="-217.14285"
-         id="tspan3008"
-         sodipodi:role="line">Making Slides in Inkscape with Inkslides</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3042"
-       y="124.20838"
-       x="-216.16243"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         id="tspan3054"
-         y="124.20838"
-         x="-216.16243"
-         sodipodi:role="line">1 Create a control layer.</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3046"
-       y="477.98074"
-       x="-217.97826"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         id="tspan3050"
-         y="477.98074"
-         x="-217.97826"
-         sodipodi:role="line">2 Mark <tspan
-   style="font-size:28px;font-style:italic"
-   id="tspan3300">Slide Pages</tspan></tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3058"
-       y="125.66295"
-       x="392.01105"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="125.66295"
-         x="392.01105"
-         id="tspan3060"
-         sodipodi:role="line">3 Define the sequence of slides</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3062"
-       y="338.56067"
-       x="393.71594"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="338.56067"
-         x="393.71594"
-         id="tspan3064"
-         sodipodi:role="line">4 Select the path, then </tspan><tspan
-         y="373.56067"
-         x="393.71594"
-         sodipodi:role="line"
-         id="tspan3376">   apply <tspan
-   style="font-size:28px;font-style:italic"
-   id="tspan3440">Extensions :: Set up Inkslides</tspan></tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3004"
-       y="560.49561"
-       x="387.4505"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="560.49561"
-         x="387.4505"
-         id="tspan3006"
-         sodipodi:role="line">5 Save and play the file in a browser.</tspan></text>
-    <text
-       sodipodi:linespacing="150%"
-       id="text3042-7"
-       y="172.32166"
-       x="-188.93581"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="172.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3320">Rectangles and Paths in the control layer decides </tspan><tspan
-         y="202.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3324">      how the slides are played.</tspan><tspan
-         y="232.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3446">The control layer is hidden automatically.</tspan><tspan
-         y="262.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3421">In this example, the gray rectangles and the blue </tspan><tspan
-         y="292.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3423">path are drawn on the control layer.</tspan><tspan
-         y="322.32166"
-         x="-188.93581"
-         sodipodi:role="line"
-         id="tspan3316" /></text>
-    <text
-       sodipodi:linespacing="150%"
-       id="text3042-7-9"
-       y="518.13397"
-       x="-191.58583"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="518.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3304">Pages are marked with rectanges.</tspan><tspan
-         y="548.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3448">Pages can overlap.</tspan><tspan
-         y="578.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3433">When a page is played, the content within the slide </tspan><tspan
-         y="608.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3372">        page is displayed. </tspan><tspan
-         y="638.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3306">Any content that is outside the page is clipped.</tspan><tspan
-         y="668.13397"
-         x="-191.58583"
-         sodipodi:role="line"
-         id="tspan3290" /></text>
-    <text
-       sodipodi:linespacing="150%"
-       id="text3042-7-9-6-9"
-       y="158.9866"
-       x="420.52191"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="158.9866"
-         x="420.52191"
-         sodipodi:role="line"
-         id="tspan3272">The sequence is defined by a path</tspan><tspan
-         y="188.9866"
-         x="420.52191"
-         sodipodi:role="line"
-         id="tspan3435">Each node on the play path marks a stop.</tspan><tspan
-         y="218.9866"
-         x="420.52191"
-         sodipodi:role="line"
-         id="tspan3278">At a stop, the <tspan
-   style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;writing-mode:lr-tb;text-anchor:start;font-family:Serif;-inkscape-font-specification:Serif"
-   id="tspan3340">smallest</tspan> slide page </tspan><tspan
-         y="248.9866"
-         x="420.52191"
-         sodipodi:role="line"
-         id="tspan3374">        enclosing the stop is displayed.</tspan></text>
+    <rect
+       y="-23.149031"
+       x="-275.61276"
+       height="762.65833"
+       width="1252.1514"
+       id="rect3468"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="90.289627"
+       x="-223.30531"
+       height="236.22191"
+       width="557.14288"
+       id="rect3470"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="431.65436"
+       x="-224.26398"
+       height="248.34375"
+       width="557.14288"
+       id="rect3472"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="80.520119"
+       x="382.28735"
+       height="185.71428"
+       width="557.14288"
+       id="rect3474"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="298.80582"
+       x="383.43018"
+       height="185.71428"
+       width="557.14288"
+       id="rect3476"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="508.16913"
+       x="384.55273"
+       height="185.71428"
+       width="557.14288"
+       id="rect3478"
+       style="opacity:0.52360517;fill:#000000;fill-opacity:0.33636367;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3480"
+       d="M -241.32704,15.709536 24.887649,216.47669 21.683884,541.32951 362.54112,231.4599 507.56216,158.74877 358.50051,472.41567 604.36581,399.79903 728.68467,661.97561 773.83035,-1.5786215"
+       style="fill:none;stroke:#00ff00;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.5;marker-start:url(#inkslides-marker-start);marker-mid:url(#inkslides-marker);marker-end:url(#inkslides-marker-end)"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+  <g
+     sodipodi:insensitive="true"
+     style="display:inline"
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="-162.63457"
-       y="414.95593"
-       id="text3312"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="420.95166"
+       y="411.44354"
+       id="text3062-6"
+       sodipodi:linespacing="150%"><tspan
+         sodipodi:role="line"
+         id="tspan3064-3"
+         x="420.95166"
+         y="411.44354">The color of the path changes to green.</tspan><tspan
+         id="tspan3367"
+         sodipodi:role="line"
+         x="420.95166"
+         y="441.44354">The extension has been installed.</tspan><tspan
+         id="tspan3442"
+         sodipodi:role="line"
+         x="420.95166"
+         y="471.44354">New pages and stops can still be added.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif Bold"
+       x="-217.14285"
+       y="32.933613"
+       id="text3006"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3314"
-         x="-162.63457"
-         y="414.95593" /></text>
+         id="tspan3008"
+         x="-217.14285"
+         y="32.933613">Making Slides in Inkscape with Inkslides</tspan></text>
     <text
-       sodipodi:linespacing="150%"
-       id="text3004-8"
-       y="603.18976"
-       x="418.08191"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
-       xml:space="preserve"><tspan
-         y="603.18976"
-         x="418.08191"
-         id="tspan3006-9"
-         sodipodi:role="line">To switch between stops, use </tspan><tspan
-         y="633.18976"
-         x="418.08191"
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-216.16243"
+       y="124.20838"
+       id="text3042"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3419">       Arrow Keys, Home, End, Page Up / Down</tspan></text>
+         x="-216.16243"
+         y="124.20838"
+         id="tspan3054">1 Create a control layer.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-217.97826"
+       y="477.98074"
+       id="text3046"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-217.97826"
+         y="477.98074"
+         id="tspan3050">2 Mark <tspan
+   id="tspan3300"
+   style="font-size:28px;font-style:italic">Slide Pages</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="392.01105"
+       y="125.66295"
+       id="text3058"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3060"
+         x="392.01105"
+         y="125.66295">3 Define the sequence of slides</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="393.71594"
+       y="338.56067"
+       id="text3062"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3064"
+         x="393.71594"
+         y="338.56067">4 Select the path, then </tspan><tspan
+         id="tspan3376"
+         sodipodi:role="line"
+         x="393.71594"
+         y="373.56067">   apply <tspan
+   id="tspan3440"
+   style="font-size:28px;font-style:italic">Extensions :: Set up Inkslides</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="387.4505"
+       y="560.49561"
+       id="text3004"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3006"
+         x="387.4505"
+         y="560.49561">5 Save and play the file in a browser.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-188.93581"
+       y="172.32166"
+       id="text3042-7"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3320"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="172.32166">Rectangles and Paths in the control layer decides </tspan><tspan
+         id="tspan3324"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="202.32166">      how the slides are played.</tspan><tspan
+         id="tspan3446"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="232.32166">The control layer is hidden automatically.</tspan><tspan
+         id="tspan3421"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="262.32166">In this example, the gray rectangles and the blue </tspan><tspan
+         id="tspan3423"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="292.32166">path are drawn on the control layer.</tspan><tspan
+         id="tspan3316"
+         sodipodi:role="line"
+         x="-188.93581"
+         y="322.32166" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="-191.58583"
+       y="518.13397"
+       id="text3042-7-9"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3304"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="518.13397">Pages are marked with rectanges.</tspan><tspan
+         id="tspan3448"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="548.13397">Pages can overlap.</tspan><tspan
+         id="tspan3433"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="578.13397">When a page is played, the content within the slide </tspan><tspan
+         id="tspan3372"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="608.13397">        page is displayed. </tspan><tspan
+         id="tspan3306"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="638.13397">Any content that is outside the page is clipped.</tspan><tspan
+         id="tspan3290"
+         sodipodi:role="line"
+         x="-191.58583"
+         y="668.13397" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="420.52191"
+       y="158.9866"
+       id="text3042-7-9-6-9"
+       sodipodi:linespacing="150%"><tspan
+         id="tspan3272"
+         sodipodi:role="line"
+         x="420.52191"
+         y="158.9866">The sequence is defined by a path</tspan><tspan
+         id="tspan3435"
+         sodipodi:role="line"
+         x="420.52191"
+         y="188.9866">Each node on the play path marks a stop.</tspan><tspan
+         id="tspan3278"
+         sodipodi:role="line"
+         x="420.52191"
+         y="218.9866">At a stop, the <tspan
+   id="tspan3340"
+   style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;writing-mode:lr-tb;text-anchor:start;font-family:Serif;-inkscape-font-specification:Serif">smallest</tspan> slide page </tspan><tspan
+         id="tspan3374"
+         sodipodi:role="line"
+         x="420.52191"
+         y="248.9866">        enclosing the stop is displayed.</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3312"
+       y="414.95593"
+       x="-162.63457"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="414.95593"
+         x="-162.63457"
+         id="tspan3314"
+         sodipodi:role="line" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="418.08191"
+       y="603.18976"
+       id="text3004-8"
+       sodipodi:linespacing="150%"><tspan
+         sodipodi:role="line"
+         id="tspan3006-9"
+         x="418.08191"
+         y="603.18976">To switch between stops, use </tspan><tspan
+         id="tspan3419"
+         sodipodi:role="line"
+         x="418.08191"
+         y="633.18976">       Arrow Keys, Home, End, Page Up / Down</tspan></text>
   </g>
   <script
      id="inkslides-script">var slides = slides || {};
@@ -587,7 +587,7 @@
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + &quot;/&quot; + viewer.controlNodes.length;
         window.setTimeout(function() {
             viewer.viewportElement.style.visibility = &quot;visible&quot;;
-        }, 400);
+        }, 200);
         
     };
 

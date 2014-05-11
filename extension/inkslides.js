@@ -5,6 +5,38 @@ var slides = slides || {};
     var INKSCAPE_NS ="http://www.inkscape.org/namespaces/inkscape"
     var SLIDES_NS ="http://www.inkscape.org/namespaces/slides"
 
+    ns.Blinker = function(svgelement) {
+        this.duration = 0;
+        this.element = svgelement;
+        this.timeoutID = null;
+    };
+
+    ns.Blinker.prototype.show = function (duration) {
+        this.duration = duration;
+        if (this.timeoutID) {
+            window.clearTimeout(this.timeoutID);
+        }
+        if (this.duration > 0) {
+            this.element.style.visibility = "visible";
+        } else {
+            this.element.style.visibility = "hidden";
+        }
+
+        this.timeoutID = window.setTimeout((function() {
+            this.element.style.visibility = "hidden";
+            }).bind(this), 
+            this.duration
+        );
+    };
+
+    function setOSDstyle(element) {
+        element.style.fillOpacity = '0.50';
+        element.style.stroke = "green";
+        element.style.fill = "green";
+        element.style.color = "green";
+        element.style.fontFamily = "monospace";
+        element.style.fontSize = "8em";
+    }
     ns.SlideViewer = function(svgRoot) {
         this.svgRoot = svgRoot;
 
@@ -18,9 +50,17 @@ var slides = slides || {};
 
         this.labelElement = document.createElementNS(SVG_NS, "text");
         this.labelElement.style.display = "inline";
-        this.labelElement.style.fillOpacity = '0.50';
-        this.labelElement.setAttribute("x", "20");        
-        this.labelElement.setAttribute("y", "20"); 
+        setOSDstyle(this.labelElement);
+
+        this.labelBlinker = new ns.Blinker(this.labelElement);
+
+        this.inputElement = document.createElementNS(SVG_NS, "text");
+        this.inputElement.style.display = "inline";
+        /* position set with resize */
+        setOSDstyle(this.inputElement); 
+
+        this.inputBlinker = new ns.Blinker(this.inputElement);
+
         /* reparent all of the inkscape layers */
         layers = svgRoot.querySelectorAll("svg>g");
         reparentLayers(layers, this.viewportElement);
@@ -29,6 +69,7 @@ var slides = slides || {};
         svgRoot.appendChild(clipPathElement);
         svgRoot.appendChild(this.viewportElement);
         svgRoot.appendChild(this.labelElement);
+        svgRoot.appendChild(this.inputElement);
         /* find the control layer */
         controlLayerId = svgRoot.getAttribute("inkslides-control-layer") || "slides-control";
         controlPathId = svgRoot.getAttribute("inkslides-control-path") || "slides-path";
@@ -94,25 +135,76 @@ var slides = slides || {};
         viewSlide(this, this.currentSlide);
     };
 
+    ns.SlideViewer.prototype.processInput = function(keycode) {
+        var text = this.inputElement.innerHTML;
+        switch(keycode) {
+            case 36: /* Home */
+                this.jumpTo(0);
+                break;
+            case 35: /* End */
+                this.jumpTo(this.slides.length - 1);
+                break;
+            case 32: /* Space */
+            case 34: /* PgDN*/
+            case 39: /* Right */
+            case 40: /* Down */
+                this.nextSlide();
+                break;
+            case 33: /* PgUp*/
+            case 37: /* Left */
+            case 38: /* Up */
+                this.prevSlide();
+                break;
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+                /* 0 - 9 */
+                var digit = keycode - 48;
+                this.inputElement.innerHTML = text + digit;
+                this.inputBlinker.show(2000);
+                console.log("input = " + text);
+                console.log("digit = " + digit);
+                break;
+            case 27: /* ESCAPE */
+                this.inputElement.innerHTML = "";
+                this.inputBlinker.show(2000);
+                console.log("input = " + text);
+                break;
+            case 8: /* BACKSPACE */ if (text.length > 0) {
+                    this.inputElement.innerHTML = text.substr(0, text.length - 1);
+                }
+                this.inputBlinker.show(2000);
+                console.log("input = " + text);
+                break; 
+            case 13: /* ENTER */
+                console.log("input = " + text);
+                this.inputElement.innerHTML = "";
+                var slide = parseInt(text);
+                this.jumpTo(slide - 1);
+                this.inputBlinker.show(100);
+                break;
+            default:
+                return false;
+        } 
+        return true;
+    };
     ns.SlideViewer.prototype.resize = function(width, height) {
         this.width = width;
         this.height = height;
         this.svgRoot.setAttribute("width", width);
         this.svgRoot.setAttribute("height", height);
         viewSlide(this, this.currentSlide);
-    };
-
-    ns.SlideViewer.prototype.showLabel = function(duration) {
-        this.labelElement.style.display = "inline";
-        if(duration) {
-            window.setTimeout((function() {
-                this.hideLabel();
-            }).bind(this), duration);
-        } 
-    };
-
-    ns.SlideViewer.prototype.hideLabel = function() {
-        this.labelElement.style.display = "none";
+        this.inputElement.setAttribute("x", width / 2 - 20);        
+        this.inputElement.setAttribute("y", height / 2 - 20); 
+        this.labelElement.setAttribute("x", "80");        
+        this.labelElement.setAttribute("y", "80"); 
     };
 
     ns.SlideViewer.prototype.getSlideBBox = function (slide) {
@@ -123,9 +215,9 @@ var slides = slides || {};
     }
 
     function viewSlide(viewer, slideid) {
+        viewer.labelBlinker.show(2000);
         var point = viewer.controlNodes[slideid];
         var slide = viewer.findSlideByPoint(point);
-
         var scale = 1.0;
         var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
 
@@ -148,7 +240,6 @@ var slides = slides || {};
         var translateX = parseInt(ww * 0.5); 
         var translateY = parseInt(wh * 0.5); 
 
-//        viewer.viewportElement.style.visibility = "hidden";
         viewer.viewportElement.setAttribute("transform",
                 "translate(" + translateX + "," + translateY + ")" + 
                 "scale(" + scale + ")" +
@@ -161,11 +252,6 @@ var slides = slides || {};
         viewer.clipRectElement.setAttribute("height", bbox.height);
 
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
-/*
-        window.setTimeout(function() {
-            viewer.viewportElement.style.visibility = "visible";
-        }, 350);
- */       
     };
 
     function sortSlidesByArea(viewer, slides) {
@@ -202,7 +288,8 @@ var slides = slides || {};
         for(j = 0; j < path.pathSegList.length; j++) {
             seg = path.pathSegList[j];
             tmppath.pathSegList.appendItem(seg);
-            nodes.push(path.getPointAtLength(tmppath.getTotalLength()));
+            var length = tmppath.getTotalLength();
+            nodes.push(path.getPointAtLength(length));
         }
         return nodes;
     }
@@ -236,35 +323,12 @@ window.addEventListener("load", function() {
             viewer.jumpTo(parseInt(window.location.hash.substr(1))-1);
         }
     }, false);
-    viewer.showLabel(2000);
 
     document.addEventListener("keypress", function(event) {
 //        console.log(event);
         var keyCode = event.charCode || event.keyCode;
-        viewer.showLabel(2000);
-        switch(keyCode) {
-            case 36: /* Home */
-                viewer.jumpTo(0);
-                break;
-            case 35: /* End */
-                viewer.jumpTo(viewer.slides.length - 1);
-                break;
-            case 32: /* Space */
-            case 34: /* PgDN*/
-            case 39: /* Right */
-            case 40: /* Down */
-                viewer.nextSlide();
-            break;
-            case 33: /* PgUp*/
-            case 37: /* Left */
-            case 38: /* Up */
-                viewer.prevSlide();
-            break;
-            default:
-                /* do not call preventDefault()*/
-                return;
-        }            
-        event.preventDefault();
+        if (viewer.processInput(keyCode))
+            event.preventDefault();
     }, false);
 }, false);
 
