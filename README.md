@@ -24,3 +24,6 @@ Differences from Sozi:
    move different layers. Sozi is in principle an animation engine, and supports
    many animation effects.
 
+Issue:
+   Make sure the nodes on control path are 'MoveTo' types. (with 
+'make selected segment lines')
