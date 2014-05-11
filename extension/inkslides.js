@@ -259,6 +259,9 @@ window.addEventListener("load", function() {
             case 38: /* Up */
                 viewer.prevSlide();
             break;
+            default:
+                /* do not call preventDefault()*/
+                return;
         }            
         event.preventDefault();
     }, false);
