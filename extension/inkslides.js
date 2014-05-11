@@ -230,6 +230,11 @@ window.addEventListener("load", function() {
         viewer.resize(window.innerWidth, window.innerHeight);
     });
 
+    window.addEventListener("hashchange", function() {
+        if (window.location.hash) {
+            viewer.jumpTo(parseInt(window.location.hash.substr(1))-1);
+        }
+    }, false);
     viewer.showLabel(2000);
 
     document.addEventListener("keypress", function(event) {
@@ -257,6 +262,5 @@ window.addEventListener("load", function() {
         }            
         event.preventDefault();
     }, false);
-
 }, false);
 
