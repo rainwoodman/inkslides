@@ -77,44 +77,18 @@ var slides = slides || {};
         /* hide the control layer */
         controlLayer.setAttribute("style", "visibility:hidden;");
 
-        this.path = controlLayer.querySelector("path[id=" + controlPathId +"]");
-        slides = controlLayer.querySelectorAll("rect");
-        this.slides = sortSlidesByArea(this, slides);
+        slides = controlLayer.querySelectorAll("*");
+        this.slides = sortSlidesByPosition(this, slides);
 
-        this.controlNodes = getPathNodes(this.path);
-        
         /* set default size and show the first slide */
         this.currentSlide = 0;
 
         this.resize(window.innerWidth, window.innerHeight);
     };
 
-    ns.SlideViewer.prototype.findSlideByPoint = function(point) {
-        var i;
-        var slide;
-        var bb;
-        x = point.x;
-        y = point.y;
-        for(i = 0; i < this.slides.length; i ++) {
-            slide = this.slides[i];
-            bb = this.getSlideBBox(slide, this.viewportElement);
-/*
-            console.log("matching " + x + ", " + y 
-                     +  " in " + slide.getAttribute('id') 
-                     + "  " +  bb.x + ", " + (1.0 * bb.x + bb.width)
-                     +  "; " + bb.y + ", " + (1.0 * bb.y + bb.height)); */
-            if (x >= bb.x && x <= bb.x + bb.width
-            &&  y >= bb.y && y <= bb.y + bb.height) {
-                return slide;
-            }
-        }
-        console.log("slide is not found");
-        return null;
-    };
-
     ns.SlideViewer.prototype.jumpTo = function(slideid) {
-        if(slideid > this.controlNodes.length - 1)  {
-            slideid = this.controlNodes.length - 1;
+        if(slideid > this.slides.length - 1)  {
+            slideid = this.slides.length - 1;
         }
         if(slideid < 0) {
             slideid = 0;
@@ -124,7 +98,7 @@ var slides = slides || {};
     };
 
     ns.SlideViewer.prototype.nextSlide = function() {
-        if(this.currentSlide == this.controlNodes.length - 1) return;
+        if(this.currentSlide == this.slides.length - 1) return;
         this.currentSlide ++;
         viewSlide(this, this.currentSlide);
     };
@@ -215,9 +189,8 @@ var slides = slides || {};
     }
 
     function viewSlide(viewer, slideid) {
-        viewer.labelBlinker.show(2000);
-        var point = viewer.controlNodes[slideid];
-        var slide = viewer.findSlideByPoint(point);
+        viewer.labelBlinker.show(1000);
+        var slide = viewer.slides[slideid];
         var scale = 1.0;
         var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
 
@@ -251,10 +224,10 @@ var slides = slides || {};
         viewer.clipRectElement.setAttribute("width", bbox.width);
         viewer.clipRectElement.setAttribute("height", bbox.height);
 
-        viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.controlNodes.length;
+        viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.slides.length;
     };
 
-    function sortSlidesByArea(viewer, slides) {
+    function sortSlidesByPosition(viewer, slides) {
         var arr = [];
         var i;
         var n;
@@ -264,7 +237,13 @@ var slides = slides || {};
         arr.sort(function (a, b) {
             a1 = viewer.getSlideBBox(a);
             b1 = viewer.getSlideBBox(b);
-            return a1.width * a1.height - b1.width * b1.height;
+            ytol = a1.height * 0.2;
+            xtol = a1.width * 0.2;
+            if (a1.y > b1.y + ytol) return 1;
+            if (a1.y < b1.y - ytol) return -1;
+            if (a1.x < b1.x - xtol) return -1;
+            if (a1.x > b1.x + xtol) return 1;
+            return 0;
         });
         return arr;
     }

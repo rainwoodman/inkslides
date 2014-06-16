@@ -77,16 +77,10 @@ class Inkslides(inkex.Effect):
 
         key = list(self.selected.keys())[0]
         node = self.selected[key]
-        if node.tag != inkex.addNS("path", "svg"):
-            inkex.errormsg("Selection is a %s. Expecting a path." % node.tag)
-            return
-
-        self.add_marker("inkslides-marker", "circle")
-        self.add_marker("inkslides-marker-start", "line")
-        self.add_marker("inkslides-marker-end", "rect")
-        self.style_path(node)
 
         layer = self.findLayerNode(node)
+
+        layer.set("style", "opacity:0.5")
 
         scriptnode = self.getElementById("inkslides-script")
         if scriptnode is None:
@@ -95,7 +89,6 @@ class Inkslides(inkex.Effect):
             self.document.getroot().append(scriptnode)
         scriptnode.text = javascript
         self.document.getroot().set("inkslides-control-layer", layer.get("id"))
-        self.document.getroot().set("inkslides-control-path", node.get("id"))
 
     def findLayerNode(self, node):
         if node.get(inkex.addNS('groupmode','inkscape')) == 'layer':
