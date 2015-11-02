@@ -2,7 +2,7 @@
 <!--
 -->
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>Set Inkslides Control Path</_name>
+  <_name>Set Inkslides Control Layer</_name>
   <id>inkslides</id>
   <dependency type="executable" location="extensions">inkex.py</dependency>
   <dependency type="executable" location="extensions">inkslides.py</dependency>
