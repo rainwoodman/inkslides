@@ -25,4 +25,10 @@ Differences from Sozi:
  * In inkslides does not provide animation. Sozi is in principle an animation engine, and supports
    many animation effects.
 
+Common Issues:
+
+ - extra elements in the control layer will become extra slides
+
+ - check the flow direction of text if they look wrong.
+
 
