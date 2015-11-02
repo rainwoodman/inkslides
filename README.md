@@ -6,7 +6,11 @@ Making Slides with Inkscape
 To install, copy all files in extensions directory to
 ~/.config/inkscape/extensions
 
-Tutorial: see inkslides.svg
+To use, see inkslides.svg
+
+To convert slides to a PDF, use slides2pdf.py. Depends on PhantomJS
+which is not so straight-forward to install, and also on pdfjoin.
+Note that pdfpages style is also required on Fedora.
 
 A lot of inspiration is from Sozi (sozi.baierouge.fr) and jessyInk. 
 
@@ -15,15 +19,10 @@ via SVG transformations.
 
 Differences from Sozi:
  
- * In inkslides, the order slide pages are played is defined 
-   via a path.
-   In Sozi this has to be defined with a model dialog and associating
-   object Ids to the slides is a bit confusing.
+ * In inkslides, the slide pages are always played from left to right, top to bottom.
+   In Sozi this has to be defined with an external program.
 
- * In inkslides, a slide pages is treated as a whole. There is no way to
-   move different layers. Sozi is in principle an animation engine, and supports
+ * In inkslides does not provide animation. Sozi is in principle an animation engine, and supports
    many animation effects.
 
-Issue:
-   Make sure the nodes on control path are 'MoveTo' types. (with 
-'make selected segment lines')
+
