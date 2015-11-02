@@ -22,10 +22,12 @@ var slides = slides || {};
             this.element.style.visibility = "hidden";
         }
 
-        this.timeoutID = window.setTimeout((function() {
-            this.element.style.visibility = "hidden";
-            }).bind(this), 
-            this.duration
+        var func = function(element) {
+            element.style.visibility = "hidden";
+        };
+        this.timeoutID = window.setTimeout(
+            func, 
+            this.duration, this.element
         );
     };
 
@@ -316,5 +318,11 @@ window.addEventListener("load", function() {
         if (viewer.processInput(keyCode))
             event.preventDefault();
     }, false);
+
+    window.inkslides = viewer;
+
+    var event = document.createEvent("CustomEvent");
+    event.initCustomEvent("inkslides-ready", false, false, null);
+    window.dispatchEvent(event);
 }, false);
 
