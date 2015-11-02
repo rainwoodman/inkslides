@@ -40,6 +40,7 @@ var slides = slides || {};
     ns.SlideViewer = function(svgRoot) {
         this.svgRoot = svgRoot;
 
+        this.svgRoot.removeAttribute('viewBox');
         clipPathElement = document.createElementNS(SVG_NS, "clipPath");
         clipPathElement.setAttribute("id", "clippath-" + svgRoot.getAttribute("id"));
         this.clipRectElement = document.createElementNS(SVG_NS, "rect");
@@ -232,6 +233,12 @@ var slides = slides || {};
         var i;
         var n;
         for(i = 0, n; n = slides[i]; ++i) {
+            try {
+                /* If the object has no BBox then skip it.*/
+                viewer.getSlideBBox(n);
+            } catch (e) {
+                continue;
+            }
             arr.push(n);
         }
         arr.sort(function (a, b) {
