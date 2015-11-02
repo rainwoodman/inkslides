@@ -22,6 +22,12 @@ var slides = slides || {};
             this.element.style.visibility = "hidden";
         }
 
+        /* Note that PhantomJS < 2.0 do not .bind(), 
+         * so we pass in the element directly.
+         * see, 
+         * https://github.com/ariya/phantomjs/issues/10522
+         * */
+
         var func = function(element) {
             element.style.visibility = "hidden";
         };
@@ -241,6 +247,7 @@ var slides = slides || {};
             } catch (e) {
                 continue;
             }
+            n.style.visibility = "hidden";
             arr.push(n);
         }
         arr.sort(function (a, b) {
@@ -321,8 +328,11 @@ window.addEventListener("load", function() {
 
     window.inkslides = viewer;
 
+    /* Note that PhantomJS < 2.0 do not support Event() constructor; 
+     * see,  https://github.com/ariya/phantomjs/issues/11289 */
     var event = document.createEvent("CustomEvent");
     event.initCustomEvent("inkslides-ready", false, false, null);
+
     window.dispatchEvent(event);
 }, false);
 
