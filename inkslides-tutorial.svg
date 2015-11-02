@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.56897527"
-     inkscape:cx="2689.3256"
-     inkscape:cy="381.00701"
+     inkscape:zoom="0.40232627"
+     inkscape:cx="1356.1089"
+     inkscape:cy="-347.27927"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
@@ -1354,7 +1354,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="ControlLayer"
-     style="opacity:0.5">
+     style="display:inline;opacity:0.5">
     <rect
        y="-277.40433"
        x="-325.60638"
@@ -1425,11 +1425,26 @@
        width="334.30579"
        id="rect6113-5"
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       y="1623.4177"
+       x="1016.0621"
+       height="469.76797"
+       width="484.68124"
+       id="rect4734-8"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       y="1535.8007"
+       x="1870.3724"
+       height="469.76797"
+       width="484.68124"
+       id="rect4734-8-4"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer">
+     inkscape:label="Layer"
+     style="display:inline">
     <text
        sodipodi:linespacing="125%"
        id="text4285"
@@ -1521,20 +1536,20 @@
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          y="-88.087158"
-         x="1896.4707"
+         x="2040.6608"
          id="tspan4313"
          sodipodi:role="line"
-         style="font-weight:bold;text-anchor:middle;text-align:center">Rearrange slides from </tspan><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle">Rearrange slides from </tspan><tspan
          id="tspan4325"
          y="-59.962158"
-         x="1896.4707"
+         x="2036.7496"
          sodipodi:role="line"
-         style="font-weight:bold;text-anchor:middle;text-align:center">- left to right</tspan><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle">- left to right</tspan><tspan
          id="tspan4327"
          y="-31.837158"
-         x="1896.4707"
+         x="2036.7496"
          sodipodi:role="line"
-         style="font-weight:bold;text-anchor:middle;text-align:center">- top to bottom.</tspan></text>
+         style="font-weight:bold;text-align:center;text-anchor:middle">- top to bottom.</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4315"
@@ -1544,49 +1559,9 @@
        xml:space="preserve"><tspan
          y="112.81111"
          x="3422.4336"
-         id="tspan4317"
          sodipodi:role="line"
-         style="font-style:italic">Play the .svg file in a browser.</tspan><tspan
-         y="140.93611"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7843" /><tspan
-         y="169.06111"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7827">Firefox is preferred.</tspan><tspan
-         y="197.18611"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7861" /><tspan
-         y="225.31111"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7859">Use arrow keys, PageUp/Down and</tspan><tspan
-         y="253.43611"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7855">space bar to switch slides.</tspan><tspan
-         y="281.5611"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7831" /><tspan
-         y="309.6861"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7837">Type slide number to jump.</tspan><tspan
-         y="337.8111"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7845" /><tspan
-         y="365.9361"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7847">Only spacebar work in Chrome. </tspan><tspan
-         y="394.0611"
-         x="3422.4336"
-         sodipodi:role="line"
-         id="tspan7849">Please fix it if you know how.</tspan></text>
+         id="tspan7849"
+         style="font-style:italic">Play the .svg file in a browser.</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4383"
@@ -1614,38 +1589,31 @@
        cx="2923.0007"
        id="path4722"
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-    <rect
-       y="803.41785"
-       x="1016.0621"
-       height="469.76797"
-       width="484.68124"
-       id="rect4734-8"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
     <text
        sodipodi:linespacing="125%"
        id="text4315-3"
-       y="946.48749"
-       x="1114.0947"
+       y="1699.0338"
+       x="1084.2164"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="946.48749"
-         x="1114.0947"
+         y="1699.0338"
+         x="1084.2164"
          id="tspan4317-6"
          sodipodi:role="line">Yes. It is that simple.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1091.4358"
-       y="1065.5437"
+       x="1081.92"
+       y="1868.9768"
        id="text7791"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan7793"
-         x="1091.4358"
-         y="1065.5437">Use slides2pdf.py to generate</tspan><tspan
+         x="1081.92"
+         y="1868.9768">Use slides2pdf.py to generate</tspan><tspan
          sodipodi:role="line"
-         x="1091.4358"
-         y="1093.6687"
+         x="1081.92"
+         y="1897.1018"
          id="tspan7795">a PDF file.</tspan></text>
     <text
        xml:space="preserve"
@@ -1716,11 +1684,86 @@
          x="-230.66302"
          y="-97.739662"
          style="font-size:17.5px">http://github.com/rainwoodman/inkslides</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3430.729"
+       y="201.71008"
+       id="text7932"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7934"
+         x="3430.729"
+         y="201.71008">Firefox is preferred.</tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="229.83508"
+         id="tspan7936"></tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="257.96008"
+         id="tspan7938">Use arrow keys, PageUp/Down and</tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="286.08508"
+         id="tspan7940">space bar to switch slides.</tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="314.21008"
+         id="tspan7942"></tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="342.33508"
+         id="tspan7944">Type slide number to jump.</tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="370.46008"
+         id="tspan7946"></tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="398.58508"
+         id="tspan7948">Only spacebar work in Chrome. </tspan><tspan
+         sodipodi:role="line"
+         x="3430.729"
+         y="426.71008"
+         id="tspan7950">Please fix it if you know how.</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#text7932"
+       id="use7952"
+       transform="translate(-1508.3933,1445.9334)"
+       width="100%"
+       height="100%" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1912.5784"
+       y="1609.0377"
+       id="text7954"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7956"
+         x="1912.5784"
+         y="1609.0377">Remember:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1967.0378"
+       y="1971.8706"
+       id="text7821-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7823-4"
+         x="1967.0378"
+         y="1971.8706"
+         style="font-size:17.5px">http://github.com/rainwoodman/inkslides</tspan></text>
   </g>
   <g
      inkscape:label="Example"
      id="layer3"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     style="display:inline">
     <text
        sodipodi:linespacing="125%"
        id="text4359"
@@ -1803,7 +1846,7 @@
        height="219.97072"
        width="334.30579"
        id="rect6113"
-       style="opacity:1;color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
     <g
        id="g6980"
        transform="translate(27.340991,-17.398814)">
