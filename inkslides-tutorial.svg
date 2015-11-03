@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.40232627"
-     inkscape:cx="1698.1431"
-     inkscape:cy="697.54419"
+     inkscape:cx="1249.5022"
+     inkscape:cy="1686.7911"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
@@ -1350,7 +1350,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1361,15 +1361,15 @@
      style="display:inline;opacity:0.5"
      transform="translate(342.03412,281.40433)">
     <rect
-       y="-277.40433"
-       x="-325.60638"
+       y="-117.40433"
+       x="-245.60638"
        height="205.69713"
        width="499.27155"
        id="rect4724"
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
     <rect
-       y="-56.190834"
-       x="-338.03412"
+       y="103.80917"
+       x="-258.03412"
        height="439.94144"
        width="492.13788"
        id="rect4726"
@@ -1465,23 +1465,23 @@
     <text
        sodipodi:linespacing="125%"
        id="text4291"
-       y="2.1829166"
-       x="-293.29428"
+       y="162.18292"
+       x="-213.29428"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="2.1829166"
-         x="-293.29428"
+         y="162.18292"
+         x="-213.29428"
          id="tspan4293"
          sodipodi:role="line">First sketch some concepts.</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4295"
-       y="-213.12711"
-       x="-299.50818"
+       y="-53.127113"
+       x="-219.50818"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="-213.12711"
-         x="-299.50818"
+         y="-53.127113"
+         x="-219.50818"
          id="tspan4297"
          sodipodi:role="line"
          style="font-weight:bold">How to make slides with inkslides</tspan></text>
@@ -1571,12 +1571,12 @@
     <text
        sodipodi:linespacing="125%"
        id="text4383"
-       y="163.49352"
-       x="-2.2723174"
+       y="323.49353"
+       x="77.727684"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="163.49352"
-         x="-2.2723174"
+         y="323.49353"
+         x="77.727684"
          id="tspan4385"
          sodipodi:role="line">Horse</tspan></text>
     <image
@@ -1649,8 +1649,8 @@
        id="rect7805"
        width="395.44775"
        height="286.47995"
-       x="-302.29785"
-       y="57.591351" />
+       x="-222.29785"
+       y="217.59134" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect7807"
@@ -1668,27 +1668,27 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="5.9790991e-06"
-       y="-151.80002"
+       x="80.000008"
+       y="8.1999817"
        id="text7817"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan7819"
-         x="5.9790991e-06"
-         y="-151.80002">By <tspan
+         x="80.000008"
+         y="8.1999817">By <tspan
    style="font-style:italic"
    id="tspan7825">Yu Feng</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-230.66302"
-       y="-97.739662"
+       x="-150.66302"
+       y="62.260353"
        id="text7821"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan7823"
-         x="-230.66302"
-         y="-97.739662"
+         x="-150.66302"
+         y="62.260353"
          style="font-size:17.5px">http://github.com/rainwoodman/inkslides</tspan></text>
     <text
        xml:space="preserve"
@@ -1704,7 +1704,7 @@
          sodipodi:role="line"
          x="3430.729"
          y="229.83508"
-         id="tspan7936"></tspan><tspan
+         id="tspan7936" /><tspan
          sodipodi:role="line"
          x="3430.729"
          y="257.96008"
@@ -1716,7 +1716,7 @@
          sodipodi:role="line"
          x="3430.729"
          y="314.21008"
-         id="tspan7942"></tspan><tspan
+         id="tspan7942" /><tspan
          sodipodi:role="line"
          x="3430.729"
          y="342.33508"
@@ -1724,7 +1724,7 @@
          sodipodi:role="line"
          x="3430.729"
          y="370.46008"
-         id="tspan7946"></tspan><tspan
+         id="tspan7946" /><tspan
          sodipodi:role="line"
          x="3430.729"
          y="398.58508"
@@ -1764,6 +1764,21 @@
          x="1967.0378"
          y="1971.8706"
          style="font-size:17.5px">http://github.com/rainwoodman/inkslides</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-274.92441"
+       y="-229.28426"
+       id="text4542"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4544"
+         x="-274.92441"
+         y="-229.28426">You are seeing the full arrangement of the slides.</tspan><tspan
+         sodipodi:role="line"
+         x="-274.92441"
+         y="-201.15926"
+         id="tspan4552">This file shall be viewed in a browser e.g. Firefox.</tspan></text>
   </g>
   <g
      inkscape:label="Example"
@@ -1774,56 +1789,56 @@
     <text
        sodipodi:linespacing="125%"
        id="text4359"
-       y="95.141006"
-       x="-228.45691"
+       y="255.14099"
+       x="-148.45691"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="95.141006"
-         x="-228.45691"
+         y="255.14099"
+         x="-148.45691"
          id="tspan4361"
          sodipodi:role="line">Animals in the Farm</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4363"
-       y="276.58575"
-       x="-7.243402"
+       y="436.58575"
+       x="72.756599"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="276.58575"
-         x="-7.243402"
+         y="436.58575"
+         x="72.756599"
          id="tspan4365"
          sodipodi:role="line">Cat</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4367"
-       y="197.04837"
-       x="-250.82681"
+       y="357.04837"
+       x="-170.82681"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="197.04837"
-         x="-250.82681"
+         y="357.04837"
+         x="-170.82681"
          id="tspan4369"
          sodipodi:role="line">Dog</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4371"
-       y="270.37192"
-       x="-270.71118"
+       y="430.37195"
+       x="-190.71118"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="270.37192"
-         x="-270.71118"
+         y="430.37195"
+         x="-190.71118"
          id="tspan4373"
          sodipodi:role="line">Donkey</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4387"
-       y="317.59729"
-       x="-193.65927"
+       y="477.59729"
+       x="-113.65927"
        style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="317.59729"
-         x="-193.65927"
+         y="477.59729"
+         x="-113.65927"
          id="tspan4389"
          sodipodi:role="line">Pig</tspan></text>
     <rect
