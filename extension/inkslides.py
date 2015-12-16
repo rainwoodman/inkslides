@@ -20,6 +20,9 @@ class Inkslides(inkex.Effect):
         inkex.NSS[u"inkslides"] = NS_URI
 
         self.model = None
+        self.OptionParser.add_option('-d', '--direction', 
+                action='store', type='string', dest='direction',
+                default="left-right")
 
     def style_path(self, node):
         style = simplestyle.parseStyle(node.get("style"))
@@ -89,6 +92,7 @@ class Inkslides(inkex.Effect):
             self.document.getroot().append(scriptnode)
         scriptnode.text = javascript
         self.document.getroot().set("inkslides-control-layer", layer.get("id"))
+        self.document.getroot().set("inkslides-control-direction", self.options.direction)
 
     def findLayerNode(self, node):
         if node.get(inkex.addNS('groupmode','inkscape')) == 'layer':

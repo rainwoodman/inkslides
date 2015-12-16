@@ -61,6 +61,14 @@ var slides = slides || {};
         this.labelElement.style.display = "inline";
         setOSDstyle(this.labelElement);
 
+        this.animationElement = document.createElementNS(SVG_NS, "animateTransform");
+        this.animationElement.setAttribute('attributeName', 'transform');
+        this.animationElement.setAttribute('type', 'translate');
+        this.animationElement.setAttribute('begin', 'indefinite');
+        this.animationElement.setAttribute('dur', '1s');
+        this.animationElement.setAttribute('fill', 'freeze');
+
+        this.viewportElement.appendChild(this.animationElement);
         this.labelBlinker = new ns.Blinker(this.labelElement);
 
         this.inputElement = document.createElementNS(SVG_NS, "text");
@@ -81,13 +89,14 @@ var slides = slides || {};
         svgRoot.appendChild(this.inputElement);
         /* find the control layer */
         controlLayerId = svgRoot.getAttribute("inkslides-control-layer") || "slides-control";
+        controlDirection = svgRoot.getAttribute("inkslides-control-direction") || "left-right";
         controlPathId = svgRoot.getAttribute("inkslides-control-path") || "slides-path";
         controlLayer = svgRoot.querySelector("g[id=" + controlLayerId + "]");
         /* hide the control layer */
         controlLayer.setAttribute("style", "visibility:hidden;");
 
         slides = controlLayer.querySelectorAll("*");
-        this.slides = sortSlidesByPosition(this, slides);
+        this.slides = sortSlidesByPosition(this, slides, controlDirection);
 
         /* set default size and show the first slide */
         this.currentSlide = 0;
@@ -102,20 +111,17 @@ var slides = slides || {};
         if(slideid < 0) {
             slideid = 0;
         }
-        this.currentSlide = slideid;
-        viewSlide(this, this.currentSlide);
+        viewSlide(this, slideid);
     };
 
     ns.SlideViewer.prototype.nextSlide = function() {
         if(this.currentSlide == this.slides.length - 1) return;
-        this.currentSlide ++;
-        viewSlide(this, this.currentSlide);
+        viewSlide(this, this.currentSlide + 1);
     };
 
     ns.SlideViewer.prototype.prevSlide = function() {
         if(this.currentSlide == 0) return;
-        this.currentSlide --;
-        viewSlide(this, this.currentSlide);
+        viewSlide(this, this.currentSlide - 1);
     };
 
     ns.SlideViewer.prototype.processInput = function(keycode) {
@@ -195,16 +201,14 @@ var slides = slides || {};
          * viewport element*/
         transform = slide.getTransformToElement(this.viewportElement);
         return applyMatrixToBBox(slide.getBBox(), transform);
-    }
+    };
 
-    function viewSlide(viewer, slideid) {
-        viewer.labelBlinker.show(1000);
-        var slide = viewer.slides[slideid];
+    ns.SlideViewer.prototype.getSlideTransform = function (slide) {
         var scale = 1.0;
-        var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
+        var bbox = this.getSlideBBox(slide, this.viewportElement);
 
-        var ww = viewer.width;
-        var wh = viewer.height;
+        var ww = this.width;
+        var wh = this.height;
         var wscale = 1.0 * ww / bbox.width;
         var hscale = 1.0 * wh / bbox.height;
         if (wscale > hscale) {
@@ -222,21 +226,40 @@ var slides = slides || {};
         var translateX = parseInt(ww * 0.5); 
         var translateY = parseInt(wh * 0.5); 
 
+        return { X:translateX, Y:translateY, X0:translateX0, Y0:translateY0, scale:scale };
+    };
+
+    function viewSlide(viewer, slideid) {
+        var slide = viewer.slides[slideid];
+        var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
+        var transform = viewer.getSlideTransform(slide);
+
+        viewer.labelBlinker.show(1000);
+/*        viewer.animationElement.endElement();
+
+        viewer.animationElement.setAttribute("from", (translateX -100 )+ "," + (translateY - 10));
+        viewer.animationElement.setAttribute("to", translateX + "," + translateY); 
+        */
+            
         viewer.viewportElement.setAttribute("transform",
-                "translate(" + translateX + "," + translateY + ")" + 
-                "scale(" + scale + ")" +
-                "translate(" + translateX0 + "," + translateY0 + ")" + 
+                "translate(" + transform.X + "," + transform.Y + ")" + 
+                "scale(" + transform.scale + ")" +
+                "translate(" + transform.X0 + "," + transform.Y0 + ")" + 
                 "");
+        /*
+        viewer.animationElement.beginElement();
+        */
 
         viewer.clipRectElement.setAttribute("x", bbox.x);
         viewer.clipRectElement.setAttribute("y", bbox.y);
         viewer.clipRectElement.setAttribute("width", bbox.width);
-        viewer.clipRectElement.setAttribute("height", bbox.height);
+        viewer.clipRectElement.setAttribute("height", bbox.height); 
 
+        viewer.currentSlide = slideid;
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.slides.length;
     };
 
-    function sortSlidesByPosition(viewer, slides) {
+    function sortSlidesByPosition(viewer, slides, direction) {
         var arr = [];
         var i;
         var n;
@@ -255,11 +278,22 @@ var slides = slides || {};
             b1 = viewer.getSlideBBox(b);
             ytol = a1.height * 0.2;
             xtol = a1.width * 0.2;
-            if (a1.y > b1.y + ytol) return 1;
-            if (a1.y < b1.y - ytol) return -1;
-            if (a1.x < b1.x - xtol) return -1;
-            if (a1.x > b1.x + xtol) return 1;
-            return 0;
+            switch (direction) {
+                /* notice the comparison is reversed*/
+                case 'lr-tb': 
+                    if (a1.y > b1.y + ytol) return 1;
+                    if (a1.y < b1.y - ytol) return -1;
+                    if (a1.x < b1.x - xtol) return -1;
+                    if (a1.x > b1.x + xtol) return 1;
+                    return 0;
+                default:
+                case 'tb-lr':
+                    if (a1.x < b1.x - xtol) return -1;
+                    if (a1.x > b1.x + xtol) return 1;
+                    if (a1.y > b1.y + ytol) return 1;
+                    if (a1.y < b1.y - ytol) return -1;
+                    return 0;
+            }
         });
         return arr;
     }
