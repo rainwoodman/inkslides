@@ -43,32 +43,57 @@ var slides = slides || {};
         element.style.fill = "green";
         element.style.color = "green";
         element.style.fontFamily = "monospace";
-        element.style.fontSize = "8em";
+        element.style.fontSize = "2em";
     }
     ns.SlideViewer = function(svgRoot) {
         this.svgRoot = svgRoot;
 
         this.svgRoot.removeAttribute('viewBox');
-        clipPathElement = document.createElementNS(SVG_NS, "clipPath");
-        clipPathElement.setAttribute("id", "clippath-" + svgRoot.getAttribute("id"));
+        this.contentElement = document.createElementNS(SVG_NS, "g");
+
         this.clipRectElement = document.createElementNS(SVG_NS, "rect");
-        clipPathElement.appendChild(this.clipRectElement);
+        
+        this.clipPathElement = document.createElementNS(SVG_NS, "clipPath");
+        this.clipPathElement.setAttribute("id", "clippath-" + svgRoot.getAttribute("id"));
+        this.clipPathElement.appendChild(this.clipRectElement);
+        
         this.viewportElement = document.createElementNS(SVG_NS, "g");
-        this.viewportElement.setAttribute("clip-path", 
-                "url(#" + clipPathElement.getAttribute("id") + ")");
+        
+        
+        this.scaleElement = document.createElementNS(SVG_NS, "g");
+
+        this.scaleElement.appendChild(this.viewportElement);
+
+        this.contentElement.appendChild(this.scaleElement);
 
         this.labelElement = document.createElementNS(SVG_NS, "text");
         this.labelElement.style.display = "inline";
         setOSDstyle(this.labelElement);
 
-        this.animationElement = document.createElementNS(SVG_NS, "animateTransform");
-        this.animationElement.setAttribute('attributeName', 'transform');
-        this.animationElement.setAttribute('type', 'translate');
-        this.animationElement.setAttribute('begin', 'indefinite');
-        this.animationElement.setAttribute('dur', '1s');
-        this.animationElement.setAttribute('fill', 'freeze');
+        this.translateAnimation = document.createElementNS(SVG_NS, "animateTransform");
+        this.translateAnimation.setAttribute('attributeName', 'transform');
+        this.translateAnimation.setAttribute('type', 'translate');
+        this.translateAnimation.setAttribute('begin', 'indefinite');
+        this.translateAnimation.setAttribute('dur', '1s');
+        this.translateAnimation.setAttribute('fill', 'freeze');
+        this.viewportElement.appendChild(this.translateAnimation);
 
-        this.viewportElement.appendChild(this.animationElement);
+        this.scaleAnimation = document.createElementNS(SVG_NS, "animateTransform");
+        this.scaleAnimation.setAttribute('attributeName', 'transform');
+        this.scaleAnimation.setAttribute('type', 'scale');
+        this.scaleAnimation.setAttribute('begin', 'indefinite');
+        this.scaleAnimation.setAttribute('dur', '1s');
+        this.scaleAnimation.setAttribute('fill', 'freeze');
+        this.scaleElement.appendChild(this.scaleAnimation);
+
+        this.scaleAnimation2 = document.createElementNS(SVG_NS, "animateTransform");
+        this.scaleAnimation2.setAttribute('attributeName', 'transform');
+        this.scaleAnimation2.setAttribute('type', 'scale');
+        this.scaleAnimation2.setAttribute('begin', 'indefinite');
+        this.scaleAnimation2.setAttribute('dur', '3s');
+        this.scaleAnimation2.setAttribute('fill', 'freeze');
+        this.clipRectElement.appendChild(this.scaleAnimation2);
+
         this.labelBlinker = new ns.Blinker(this.labelElement);
 
         this.inputElement = document.createElementNS(SVG_NS, "text");
@@ -83,8 +108,8 @@ var slides = slides || {};
         reparentLayers(layers, this.viewportElement);
 
         /* add the clippath and viewport elements */
-        svgRoot.appendChild(clipPathElement);
-        svgRoot.appendChild(this.viewportElement);
+        svgRoot.appendChild(this.clipPathElement);
+        svgRoot.appendChild(this.contentElement);
         svgRoot.appendChild(this.labelElement);
         svgRoot.appendChild(this.inputElement);
         /* find the control layer */
@@ -112,6 +137,16 @@ var slides = slides || {};
             slideid = 0;
         }
         viewSlide(this, slideid);
+    };
+
+    ns.SlideViewer.prototype.jumpToQuick = function(slideid) {
+        if(slideid > this.slides.length - 1)  {
+            slideid = this.slides.length - 1;
+        }
+        if(slideid < 0) {
+            slideid = 0;
+        }
+        viewSlideQuick(this, slideid);
     };
 
     ns.SlideViewer.prototype.nextSlide = function() {
@@ -196,6 +231,15 @@ var slides = slides || {};
         this.labelElement.setAttribute("y", "80"); 
     };
 
+    ns.SlideViewer.prototype.disableClipPath = function () {
+        this.viewportElement.removeAttribute("clip-path");
+    };
+
+    ns.SlideViewer.prototype.enableClipPath = function () {
+        this.viewportElement.setAttribute("clip-path", 
+                "url(#" + this.clipPathElement.getAttribute("id") + ")");
+    };
+
     ns.SlideViewer.prototype.getSlideBBox = function (slide) {
         /* this will return the BBox in the user coordinate of the
          * viewport element*/
@@ -230,33 +274,74 @@ var slides = slides || {};
     };
 
     function viewSlide(viewer, slideid) {
+        var oldslide = viewer.slides[viewer.currentSlide];
         var slide = viewer.slides[slideid];
         var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
         var transform = viewer.getSlideTransform(slide);
+        var oldtransform = viewer.getSlideTransform(oldslide);
 
         viewer.labelBlinker.show(1000);
-/*        viewer.animationElement.endElement();
+        
+        viewer.translateAnimation.endElement();
+        viewer.scaleAnimation.endElement();
 
-        viewer.animationElement.setAttribute("from", (translateX -100 )+ "," + (translateY - 10));
-        viewer.animationElement.setAttribute("to", translateX + "," + translateY); 
-        */
-            
-        viewer.viewportElement.setAttribute("transform",
+        viewer.contentElement.setAttribute("transform",
                 "translate(" + transform.X + "," + transform.Y + ")" + 
-                "scale(" + transform.scale + ")" +
-                "translate(" + transform.X0 + "," + transform.Y0 + ")" + 
                 "");
+
+        viewer.scaleAnimation.setAttribute("from", oldtransform.scale);
+        viewer.scaleAnimation.setAttribute("to", transform.scale);
         /*
-        viewer.animationElement.beginElement();
-        */
+        viewer.scaleAnimation2.setAttribute("from", 10.0);
+        viewer.scaleAnimation2.setAttribute("to", 1.1); */
+        viewer.translateAnimation.setAttribute("from", oldtransform.X0 + "," + oldtransform.Y0); 
+        viewer.translateAnimation.setAttribute("to", transform.X0 + "," + transform.Y0); 
 
         viewer.clipRectElement.setAttribute("x", bbox.x);
         viewer.clipRectElement.setAttribute("y", bbox.y);
         viewer.clipRectElement.setAttribute("width", bbox.width);
         viewer.clipRectElement.setAttribute("height", bbox.height); 
 
+        viewer.disableClipPath();
+
+        this.timeoutID = window.setTimeout(
+            function (viewer) {
+                viewer.enableClipPath();
+            }, 1100, viewer
+        );
+
+        viewer.translateAnimation.beginElement();
+        viewer.scaleAnimation.beginElement();
+
+        /*
+        viewer.clipRectElement.setAttribute("x", 0);
+        viewer.clipRectElement.setAttribute("y", 0);
+        viewer.clipRectElement.setAttribute("width", "100%");
+        viewer.clipRectElement.setAttribute("height", "100%"); */
         viewer.currentSlide = slideid;
         viewer.labelElement.innerHTML = (viewer.currentSlide + 1) + "/" + viewer.slides.length;
+    };
+
+    function viewSlideQuick(viewer, slideid) {
+        var slide = viewer.slides[slideid];
+        var bbox = viewer.getSlideBBox(slide, viewer.viewportElement);
+        var transform = viewer.getSlideTransform(slide);
+
+        viewer.contentElement.setAttribute("transform",
+                "translate(" + transform.X + "," + transform.Y + ")" + 
+                "");
+
+        viewer.scaleElement.setAttribute("transform", "scale(" + transform.scale + ")");
+        viewer.viewportElement.setAttribute("transform", "translate(" + transform.X0 + "," + transform.Y0 + ")"); 
+
+        viewer.clipRectElement.setAttribute("x", bbox.x);
+        viewer.clipRectElement.setAttribute("y", bbox.y);
+        viewer.clipRectElement.setAttribute("width", bbox.width);
+        viewer.clipRectElement.setAttribute("height", bbox.height); 
+
+        viewer.enableClipPath();
+
+        viewer.currentSlide = slideid;
     };
 
     function sortSlidesByPosition(viewer, slides, direction) {

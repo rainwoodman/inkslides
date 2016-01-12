@@ -91,7 +91,7 @@ function main(options) {
 
         for (var i = 0; i < frameCount; i ++) {
             console.log("Exporting frame: " + (i + 1));
-            window.inkslides.jumpTo(i);
+            window.inkslides.jumpToQuick(i);
             window.callPhantom(zeroPadded((i + 1).toString(), digits));
         }
     }
