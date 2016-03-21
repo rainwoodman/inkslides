@@ -10,7 +10,7 @@ var page = require("webpage").create(),
  * Called from sandboxed Javascript.
  */
 page.onConsoleMessage = function (msg) {
-    console.log("sozi2pdf.js> " + msg);
+    console.log("slides2pdf.js> " + msg);
 };
 
 /*
@@ -26,8 +26,6 @@ page.onCallback = function (fileName) {
  * Sandboxed function
  */
 function main(options) {
-    var SOZI_VERSION_MIN = "12.09";
-    var SOZI_NS = "http://sozi.baierouge.fr";
 
     function markInterval(list, first, last, step, value) {
         if (step > 0) {
@@ -102,7 +100,7 @@ function main(options) {
 }
 
 if (phantom.args.length < 4) {
-    console.log("Usage: sozi2pdf.js url.svg dir width_px height_px");
+    console.log("Usage: slides2pdf.js url.svg dir width_px height_px");
     phantom.exit();
 }
 else {
@@ -126,7 +124,7 @@ else {
     
     page.open(url, function (status) {
         if (status !== "success") {
-            console.log("sozi2pdf.js> Unable to load the document: " + url);
+            console.log("slides2pdf.js> Unable to load the document: " + url);
         }
         phantom.exit();
     });

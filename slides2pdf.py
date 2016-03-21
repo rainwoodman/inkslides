@@ -11,7 +11,7 @@ from optparse import OptionParser
 # However, we have to compute the viewport dimensions
 # as if the resolution was 72 dots per cm.
 # Moreover, a zoom factor of 0.5 will be needed when rendering
-# (see sozi2pdf.js, function page.onCallback).
+# (see slides2pdf.js, function page.onCallback).
 PAGE_FORMATS = {
     "a3":         { "width": 42,   "height": 29.7, "resolution": 72 },
     "a4":         { "width": 29.7, "height": 21,   "resolution": 72 },
@@ -26,8 +26,8 @@ DEFAULT_RESOLUTION = 3.6
 if __name__ == '__main__':
     option_parser = OptionParser()
 
-    option_parser.description = "Export a Sozi presentation to PDF"
-    option_parser.usage = "sozi2pdf.py [options] url.svg"
+    option_parser.description = "Export a Inkslides presentation to PDF"
+    option_parser.usage = "slides2pdf.py [options] url.svg"
     
     option_parser.add_option("-f", "--format", type="string", dest="format", default="a4",
         help="Page format: 'a3' | 'a4' | 'letter' | 'screen' | 'widescreen' (default is 'a4')")
