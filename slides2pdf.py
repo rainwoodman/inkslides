@@ -90,15 +90,22 @@ if __name__ == '__main__':
     
     # Export Sozi frames to individual PDF files
     js = os.path.join(os.path.dirname(__file__), "slides2pdf.js") 
-    subprocess.call(["phantomjs", js, input_file_name, tmp_dir, str(width_px), str(height_px)])
-    
+    try:
+        subprocess.call(["phantomjs", js, input_file_name, tmp_dir, str(width_px), str(height_px)])
+    except OSError:
+        raise RuntimeError("Please install phantomjs");
+
     # Merge all frames to a single PDF file.
     # In some situations, PhantomJS generates two pages per frame. Only the first page is kept.
     # TODO support other pdf merge tools
     frame_pdfs = [os.path.join(tmp_dir, file_name) for file_name in sorted(os.listdir(tmp_dir))]
+
     if len(frame_pdfs):
         sys.stdout.write("Writing PDF to: {0}\n".format(output_file_name))
-        subprocess.call(["pdfjoin", "--outfile", output_file_name] + frame_pdfs + ["1"])
+        try:
+            subprocess.call(["pdfjoin", "--outfile", output_file_name] + frame_pdfs + ["1"])
+        except OSError:
+            raise RuntimeError("Please install pdfjam");
 
     # Remove the temporary directory and its content
     shutil.rmtree(tmp_dir, ignore_errors=True)
