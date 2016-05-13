@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+var system = require("system");
 var page = require("webpage").create(),
     url, tmpDir;
 
@@ -99,32 +100,32 @@ function main(options) {
     }, false);
 }
 
-if (phantom.args.length < 4) {
+if (system.args.length < 5) {
     console.log("Usage: slides2pdf.js url.svg dir width_px height_px");
     phantom.exit();
 }
 else {
     page.paperSize = {
-        width:  phantom.args[2] + "px",
-        height: phantom.args[3] + "px"
+        width:  system.args[3] + "px",
+        height: system.args[4] + "px"
     };
     page.viewportSize = {
-        width:  parseFloat(phantom.args[2]),
-        height: parseFloat(phantom.args[3])
+        width:  parseFloat(system.args[3]),
+        height: parseFloat(system.args[4])
     };
+
 
     page.onInitialized = function () {
         page.evaluate(function (main, options) {
             main(options);
         }, main, {});
     };
-    
-    url = phantom.args[0];    
-    tmpDir = phantom.args[1] + "/";
-    
+
+    url = system.args[1];
+    tmpDir = system.args[2] + "/";
     page.open(url, function (status) {
         if (status !== "success") {
-            console.log("slides2pdf.js> Unable to load the document: " + url);
+            console.log("Unable to load the document: " + url);
         }
         phantom.exit();
     });
