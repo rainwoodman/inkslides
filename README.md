@@ -14,7 +14,7 @@ Dependency
 
 For PDF export:
 
-4. PhantomJS (Fedora: https://copr.fedorainfracloud.org/coprs/username/phantomjs/)
+4. PhantomJS (Fedora: https://copr.fedorainfracloud.org/coprs/username/phantomjs/) or SlimmerJS.
 5. pdfjoin   (Part of pdfjam)
 6. pdfpages, (Latex document class)
 
