@@ -24,15 +24,13 @@ Install
 Copy all files in extensions/ directory to
 
 ```
-    git clone github.com:rainwoodman/inkslides
+    git clone git@github.com:rainwoodman/inkslides
 
     cd inkslides
     cp -r extensions/* ~/.config/inkscape/extensions
 ```
 
-then *merge* keys/default.xml in keys directory to the existing file in
-
-~/.config/inkscape/keys/default.xml
+Then import keys/default.xml in keys directory from Edit/Preferences/Interface/Keyboard Shortcuts/Import.
 
 Usually, if you do not already have a file there, just copy the xml file.
 
@@ -43,7 +41,7 @@ Usually, if you do not already have a file there, just copy the xml file.
 Examples
 --------
 
-See inkslides.svg.
+See https://github.com/rainwoodman/inkslides/blob/master/inkslides-tutorial.svg .
 
 First draw the presentation, as a giant poster. Keep the ideas flow in a consistent direction. (e.g. the type writter flow, from left to right, then start a new line from the very left.)
 
