@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <keys name="Inkscape default">
   <bind key="l" action="org.ekips.filter.textext" display="true" />
-  <bind key="s" action="sozi" display="true" />
+  <bind key="s" action="inkslides" display="true" />
 </keys>
