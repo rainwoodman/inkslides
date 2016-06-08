@@ -13,6 +13,7 @@ Dependency
 3. pdf2svg  (http://www.cityinthesky.co.uk/opensource/pdf2svg/)
 
 For PDF export:
+
 4. PhantomJS
 5. pdfjoin
 6. pdfpages, (Latex document class)
@@ -50,7 +51,7 @@ Next define a new layer.
 
 Then mark the presentation slides with rectangles on the new layer.
 
-Finally, select an rectangleon the new layer, and click Extensions - Set Inkslides Control Layer. Pick the direction of the flow you decided at the beginning.
+Finally, select an rectangle on the new layer, and click Extensions - Set Inkslides Control Layer. Pick the direction of the flow you decided at the beginning.
 
 Open the file in a browser and it will play. Use space for next slide. Arrow keys work too. Tweak the document as needed.
 
