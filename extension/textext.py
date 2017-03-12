@@ -57,9 +57,10 @@ from lxml import etree
 
 USE_GTK = False
 try:
-    import pygtk
-    pygtk.require('2.0')
-    import gtk
+    import gi
+    gi.require_version('Gtk', '3.0')
+    from gi.repository import Gtk as gtk
+    from gi.repository import Gdk as gdk
     USE_GTK = True
 except ImportError:
     pass
@@ -101,7 +102,7 @@ if USE_GTK:
         def ask(self, callback):
             self.callback = callback
             
-            window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+            window = gtk.Window(gtk.WindowType.TOPLEVEL)
             window.set_title("TeX Text")
             window.set_default_size(600, 400)
     
@@ -114,14 +115,14 @@ if USE_GTK:
                 self._preamble = gtk.FileChooserButton("...")
                 if os.path.exists(self.preamble_file):
                     self._preamble.set_filename(self.preamble_file)
-                self._preamble.set_action(gtk.FILE_CHOOSER_ACTION_OPEN)
+                self._preamble.set_action(gtk.FileChooserAction.OPEN)
             else:
                 self._preamble = gtk.Entry()
                 self._preamble.set_text(self.preamble_file)
             
             self._scale_adj = gtk.Adjustment(lower=0.01, upper=100,
                                              step_incr=0.1, page_incr=1)
-            self._scale = gtk.SpinButton(self._scale_adj, digits=2)
+            self._scale = gtk.SpinButton(adjustment=self._scale_adj, digits=2)
             
             if self.scale_factor is not None:
                 self._scale_adj.set_value(self.scale_factor)
@@ -133,8 +134,8 @@ if USE_GTK:
             self._text.get_buffer().set_text(self.text)
 
             sw = gtk.ScrolledWindow()
-            sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-            sw.set_shadow_type(gtk.SHADOW_IN)
+            sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
+            sw.set_shadow_type(gtk.ShadowType.IN)
             sw.add(self._text)
             
             self._ok = gtk.Button(stock=gtk.STOCK_OK)
@@ -142,22 +143,22 @@ if USE_GTK:
     
             # layout
             table = gtk.Table(3, 2, False)
-            table.attach(label1,         0,1,0,1,xoptions=0,yoptions=gtk.FILL)
-            table.attach(self._preamble, 1,2,0,1,yoptions=gtk.FILL)
-            table.attach(label2,         0,1,1,2,xoptions=0,yoptions=gtk.FILL)
-            table.attach(self._scale,    1,2,1,2,yoptions=gtk.FILL)
-            table.attach(label3,         0,1,2,3,xoptions=0,yoptions=gtk.FILL)
+            table.attach(label1,         0,1,0,1,xoptions=0,yoptions=gtk.Align.FILL)
+            table.attach(self._preamble, 1,2,0,1,yoptions=gtk.Align.FILL)
+            table.attach(label2,         0,1,1,2,xoptions=0,yoptions=gtk.Align.FILL)
+            table.attach(self._scale,    1,2,1,2,yoptions=gtk.Align.FILL)
+            table.attach(label3,         0,1,2,3,xoptions=0,yoptions=gtk.Align.FILL)
             table.attach(sw,             1,2,2,3)
     
             vbox = gtk.VBox(False, 5)
-            vbox.pack_start(table)
+            vbox.pack_start(table, expand=True, fill=True, padding=0)
             
             hbox = gtk.HButtonBox()
             hbox.add(self._ok)
             hbox.add(self._cancel)
-            hbox.set_layout(gtk.BUTTONBOX_SPREAD)
+            hbox.set_layout(gtk.ButtonBoxStyle.SPREAD)
             
-            vbox.pack_end(hbox, expand=False, fill=False)
+            vbox.pack_end(hbox, expand=False, fill=False, padding=0)
     
             window.add(vbox)
     
@@ -183,8 +184,8 @@ if USE_GTK:
 
         def cb_key_press(self, widget, event, data=None):
             # ctrl+return clicks the ok button
-            if gtk.gdk.keyval_name(event.keyval) == 'Return' \
-                   and gtk.gdk.CONTROL_MASK & event.state:
+            if gdk.keyval_name(event.keyval) == 'Return' \
+                   and gdk.ModifierType.CONTROL_MASK & event.state:
                 self._ok.clicked()
                 return True
             return False
@@ -195,7 +196,7 @@ if USE_GTK:
         def cb_ok(self, widget, data=None):
             buf = self._text.get_buffer()
             self.text = buf.get_text(buf.get_start_iter(),
-                                     buf.get_end_iter())
+                                     buf.get_end_iter(), include_hidden_chars=False)
             if isinstance(self._preamble, gtk.FileChooser):
                 self.preamble_file = self._preamble.get_filename()
                 if not self.preamble_file:
@@ -211,23 +212,23 @@ if USE_GTK:
             except StandardError, e:
                 err_msg = traceback.format_exc()
                 dlg = gtk.Dialog("Textext Error", self._window, 
-                                 gtk.DIALOG_MODAL)
+                                 gtk.DialogFlags.MODAL)
                 dlg.set_default_size(600, 400)
-                btn = dlg.add_button(gtk.STOCK_OK, gtk.RESPONSE_CLOSE)
+                btn = dlg.add_button(gtk.STOCK_OK, gtk.ResponseType.CLOSE)
                 btn.connect("clicked", lambda w, d=None: dlg.destroy())
                 msg = gtk.Label()
                 msg.set_markup("<b>Error occurred while converting text from Latex to SVG:</b>")
                 
                 txtw = gtk.ScrolledWindow()
-                txtw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-                txtw.set_shadow_type(gtk.SHADOW_IN)
+                txtw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
+                txtw.set_shadow_type(gtk.ShadowType.IN)
                 txt = gtk.TextView()
                 txt.set_editable(False)
                 txt.get_buffer().set_text(err_msg)
                 txtw.add(txt)
                 
-                dlg.vbox.pack_start(msg, expand=False, fill=True)
-                dlg.vbox.pack_start(txtw, expand=True, fill=True)
+                dlg.vbox.pack_start(msg, expand=False, fill=True, padding=0)
+                dlg.vbox.pack_start(txtw, expand=True, fill=True, padding=0)
                 dlg.show_all()
                 dlg.run()
                 return False
