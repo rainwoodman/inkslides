@@ -55,7 +55,7 @@ var slides = slides || {};
             if(tspan.style.whiteSpace == "normal") {
                 /* inkscape tends to write a lot of redundant styles; whiteSpace breaks webkit */
                 /* https://github.com/ariya/phantomjs/issues/13625 */
-                console.log("Fixing "whiteSpace=normal;" for phantomJS #13625");
+                console.log("Fixing 'whiteSpace=normal;' for phantomJS #13625");
                 tspan.style.whiteSpace = null;
             } 
         }
