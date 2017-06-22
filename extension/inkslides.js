@@ -45,8 +45,27 @@ var slides = slides || {};
         element.style.fontFamily = "monospace";
         element.style.fontSize = "2em";
     }
+
+    function fixtspan(root) {
+        var tspans = root.querySelectorAll("tspan");
+        var i;
+        var tspan;
+        for(i = 0; i < tspans.length; i ++) {
+            tspan = tspans[i];
+            if(tspan.style.whiteSpace == "normal") {
+                /* inkscape tends to write a lot of redundant styles; whiteSpace breaks webkit */
+                /* https://github.com/ariya/phantomjs/issues/13625 */
+                console.log("Fixing "whiteSpace=normal;" for phantomJS #13625");
+                tspan.style.whiteSpace = null;
+            } 
+        }
+
+    }
+
     ns.SlideViewer = function(svgRoot) {
         this.svgRoot = svgRoot;
+
+        fixtspan(this.svgRoot);
 
         this.svgRoot.removeAttribute('viewBox');
         this.contentElement = document.createElementNS(SVG_NS, "g");
