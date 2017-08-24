@@ -27,7 +27,7 @@ Copy all files in extensions/ directory to
     git clone https://github.com/rainwoodman/inkslides
 
     cd inkslides
-    cp -r extensions/* ~/.config/inkscape/extensions
+    cp -r extension/* ~/.config/inkscape/extensions
 ```
 
 Then import keys/default.xml in keys directory from Edit/Preferences/Interface/Keyboard Shortcuts/Import.
