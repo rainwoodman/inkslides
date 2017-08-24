@@ -24,7 +24,7 @@ Install
 Copy all files in extensions/ directory to
 
 ```
-    git clone git@github.com:rainwoodman/inkslides
+    git clone https://github.com/rainwoodman/inkslides
 
     cd inkslides
     cp -r extensions/* ~/.config/inkscape/extensions
