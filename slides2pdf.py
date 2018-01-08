@@ -36,6 +36,8 @@ if __name__ == '__main__':
     option_parser.add_option("-p", "--portrait", action="store_false", dest="landscape",
         help="Set page orientation to portrait")
 
+    option_parser.add_option("-J", "--js", dest="phantomjs", help="command to trigger the JS interpreter", default="phantomjs")
+
     option_parser.add_option("-W", "--width", type="float", dest="width",
         help="Page width (default is 29.7), supersedes 'format', 'landscape' and 'portrait' options")
     option_parser.add_option("-H", "--height", type="float", dest="height",
@@ -71,6 +73,8 @@ if __name__ == '__main__':
         
     if options.height is not None:
         height = options.height
+
+    phantomjs = options.phantomjs
     
     # Compute page dimensions in pixels
     width_px  = width  * resolution
@@ -91,7 +95,7 @@ if __name__ == '__main__':
     # Export Sozi frames to individual PDF files
     js = os.path.join(os.path.dirname(__file__), "slides2pdf.js") 
     try:
-        subprocess.call(["phantomjs", js, input_file_name, tmp_dir, str(width_px), str(height_px)])
+        subprocess.call([options.phantomjs, js, input_file_name, tmp_dir, str(width_px), str(height_px)])
     except OSError:
         raise RuntimeError("Please install phantomjs");
 
