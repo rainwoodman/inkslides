@@ -3,13 +3,15 @@
 import sys, os
 
 # We will use the inkex module with the predefined Effect base class.
+from lxml import etree
 import inkex
 import simplestyle
 import re
 
 NS_URI = u"http://github.com/rainwoodman/inkslides/ns"
 
-javascript = file(os.path.join(os.path.dirname(__file__), "inkslides.js")).read()
+with open(os.path.join(os.path.dirname(__file__), "inkslides.js")) as ff:
+    javascript = ff.read()
 
 def_color = "#0f0"
 def_opacity = 0.5
@@ -20,8 +22,8 @@ class Inkslides(inkex.Effect):
         inkex.NSS[u"inkslides"] = NS_URI
 
         self.model = None
-        self.OptionParser.add_option('-d', '--direction', 
-                action='store', type='string', dest='direction',
+        self.arg_parser.add_argument('-d', '--direction', 
+                action='store', type=str, dest='direction',
                 default="left-right")
 
     def style_path(self, node):
@@ -38,31 +40,31 @@ class Inkslides(inkex.Effect):
         
     def add_marker(self, name, symbol):
         """ this will create the marker definations """
-        marker = self.getElementById(name) 
+        marker = self.svg.getElementById(name) 
         if marker is None:
             defs = self.xpathSingle('/svg:svg//svg:defs')
             if defs == None:
-                defs = inkex.etree.SubElement(self.document.getroot(), inkex.addNS('defs','svg'))
+                defs = etree.SubElement(self.document.getroot(), inkex.addNS('defs','svg'))
         
-            marker = inkex.etree.SubElement(defs, inkex.addNS('marker','svg'))
+            marker = etree.SubElement(defs, inkex.addNS('marker','svg'))
 
         marker.clear()
         marker.set("id", name)
         marker.set("orient", "auto")
         if symbol == "circle":
-            markerpath = inkex.etree.SubElement(marker, inkex.addNS('circle','svg'))
+            markerpath = etree.SubElement(marker, inkex.addNS('circle','svg'))
             markerpath.set("cx", "0")
             markerpath.set("cy", "0")
             markerpath.set("r", "2")
         elif symbol == "rect":
-            markerpath = inkex.etree.SubElement(marker, inkex.addNS('rect','svg'))
+            markerpath = etree.SubElement(marker, inkex.addNS('rect','svg'))
             markerpath.set("x", "-2")
             markerpath.set("y", "-2")
             markerpath.set("width", "4")
             markerpath.set("height", "4")
             markerpath.set("transform", "rotate(45)")
         elif symbol == "line":
-            markerpath = inkex.etree.SubElement(marker, inkex.addNS('rect','svg'))
+            markerpath = etree.SubElement(marker, inkex.addNS('rect','svg'))
             markerpath.set("x", "-1")
             markerpath.set("y", "-2")
             markerpath.set("width", "2")
@@ -71,23 +73,23 @@ class Inkslides(inkex.Effect):
         markerpath.set("style", 
               "fill: %s; fill-opacity:%g" % (def_color, def_opacity))
 
-        markerpath = inkex.etree.SubElement(marker, inkex.addNS('circle','svg'))
+        markerpath = etree.SubElement(marker, inkex.addNS('circle','svg'))
         markerpath.set("cx", "0")
         markerpath.set("cy", "0")
         markerpath.set("r", "0.4")
          
     def effect(self):
 
-        key = list(self.selected.keys())[0]
-        node = self.selected[key]
+        key = list(self.svg.selected.keys())[0]
+        node = self.svg.selected[key]
 
         layer = self.findLayerNode(node)
 
         layer.set("style", "opacity:0.5")
 
-        scriptnode = self.getElementById("inkslides-script")
+        scriptnode = self.svg.getElementById("inkslides-script")
         if scriptnode is None:
-            scriptnode = inkex.etree.Element(inkex.addNS("script", "svg"))
+            scriptnode = etree.Element(inkex.addNS("script", "svg"))
             scriptnode.set("id","inkslides-script")
             self.document.getroot().append(scriptnode)
         scriptnode.text = javascript
@@ -98,9 +100,9 @@ class Inkslides(inkex.Effect):
         if node.get(inkex.addNS('groupmode','inkscape')) == 'layer':
             return node
         else:
-            return self.findLayerNode(self.getParentNode(node))
+            return self.findLayerNode(node.getparent())
 
 # Create effect instance
 effect = Inkslides()
-effect.affect()
+effect.run()
 
