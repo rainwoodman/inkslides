@@ -52,7 +52,7 @@ sys.path.append(r'c:/Program Files/Inkscape/share/extensions')
 sys.path.append(os.path.dirname(__file__))
 
 import inkex
-import os, sys, tempfile, traceback, glob, re, md5, copy
+import os, sys, tempfile, traceback, glob, re, hashlib, copy
 from lxml import etree
 
 USE_GTK = False
@@ -96,31 +96,39 @@ NSS = {
 if USE_GTK:
     class AskText(object):
         """GUI for editing TexText objects"""
-        def __init__(self, text, preamble_file, scale_factor):
+        def __init__(self, text, preamble, scale_factor):
             self.text = text
-            self.preamble_file = preamble_file
+            self.preamble= preamble
             self.scale_factor = scale_factor
             self.callback = None
     
         def ask(self, callback):
             self.callback = callback
             
-            window = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+            window = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
             window.set_title("TeX Text")
             window.set_default_size(600, 400)
     
-            label1 = Gtk.Label(u"Preamble file:")
-            label2 = Gtk.Label(u"Scale factor:")
-            label3 = Gtk.Label(u"Text:")
+            label1 = Gtk.Label(label=u"Preamble:")
+            label2 = Gtk.Label(label=u"Scale factor:")
+            label3 = Gtk.Label(label=u"Text:")
 
+            lang_manager = GtkSource.LanguageManager.get_default()
+            font = Pango.FontDescription.from_string("mono")
+            latex_language = lang_manager.get_language("latex")
 
-            self._preamble = Gtk.FileChooserButton("...")
-            if os.path.exists(self.preamble_file):
-                self._preamble.set_filename(self.preamble_file)
-            self._preamble.set_action(Gtk.FileChooserAction.OPEN)
+            self._preamble = GtkSource.View()
+            self._preamble.get_pango_context().set_font_description(font)
+            self._preamble.get_buffer().set_language(latex_language)
+            self._preamble.get_buffer().set_text(self.preamble)
             
+            swp = Gtk.ScrolledWindow()
+            swp.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+            swp.set_shadow_type(Gtk.ShadowType.IN)
+            swp.add(self._preamble)
+
             self._scale_adj = Gtk.Adjustment(lower=0.01, upper=100,
-                                             step_incr=0.1, page_incr=1)
+                                             step_increment=0.1, page_increment=1)
             self._scale = Gtk.SpinButton(adjustment=self._scale_adj, digits=2)
             
             if self.scale_factor is not None:
@@ -130,41 +138,30 @@ if USE_GTK:
                 self._scale.set_sensitive(False)
             
             self._text = GtkSource.View()
-            lang_manager = GtkSource.LanguageManager.get_default()
-            font = Pango.FontDescription.from_string("mono")
-            self._text.modify_font(font)
-            latex_language = lang_manager.get_language("latex")
+            self._text.get_pango_context().set_font_description(font)
             self._text.get_buffer().set_language(latex_language)
             self._text.get_buffer().set_text(self.text)
 
-            sw = Gtk.ScrolledWindow()
-            sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-            sw.set_shadow_type(Gtk.ShadowType.IN)
-            sw.add(self._text)
+            swt = Gtk.ScrolledWindow()
+            swt.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+            swt.set_shadow_type(Gtk.ShadowType.IN)
+            swt.add(self._text)
             
-            self._ok = Gtk.Button(stock=Gtk.STOCK_OK)
-            self._cancel = Gtk.Button(stock=Gtk.STOCK_CANCEL)
+            self._ok = Gtk.Button.new_with_mnemonic(label=Gtk.STOCK_OK)
+            self._cancel = Gtk.Button.new_with_mnemonic(label=Gtk.STOCK_CANCEL)
     
             # layout
-            table = Gtk.Table(3, 2, False)
-            table.attach(label1,         0,1,0,1,xoptions=0,yoptions=Gtk.Align.FILL)
-            table.attach(self._preamble, 1,2,0,1,yoptions=Gtk.Align.FILL)
-            table.attach(label2,         0,1,1,2,xoptions=0,yoptions=Gtk.Align.FILL)
-            table.attach(self._scale,    1,2,1,2,yoptions=Gtk.Align.FILL)
-            table.attach(label3,         0,1,2,3,xoptions=0,yoptions=Gtk.Align.FILL)
-            table.attach(sw,             1,2,2,3)
+            table = Gtk.Grid()
+            table.attach(label1,         0,0,1,1)
+            table.attach(swp,            1,0,8,1)
+            table.attach(label2,         0,1,1,1)
+            table.attach(self._scale,    1,1,8,1)
+            table.attach(label3,         0,2,1,1)
+            table.attach(swt,            1,2,8,8)
+            table.attach(self._ok,            0,10,1,3)
+            table.attach(self._cancel,            5,10,1,3)
     
-            vbox = Gtk.VBox(False, 5)
-            vbox.pack_start(table, expand=True, fill=True, padding=5)
-            
-            hbox = Gtk.HButtonBox()
-            hbox.add(self._ok)
-            hbox.add(self._cancel)
-            hbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
-            
-            vbox.pack_end(hbox, expand=False, fill=False, padding=5)
-    
-            window.add(vbox)
+            window.add(table)
     
             # signals
             window.connect("delete-event", self.cb_delete_event)
@@ -180,7 +177,7 @@ if USE_GTK:
             self._window = window
             Gtk.main()
     
-            return self.text, self.preamble_file, self.scale_factor
+            return self.text, self.preamble, self.scale_factor
     
         def cb_delete_event(self, widget, event, data=None):
             Gtk.main_quit()
@@ -201,19 +198,16 @@ if USE_GTK:
             buf = self._text.get_buffer()
             self.text = buf.get_text(buf.get_start_iter(),
                                      buf.get_end_iter(), include_hidden_chars=False)
-            if isinstance(self._preamble, Gtk.FileChooser):
-                self.preamble_file = self._preamble.get_filename()
-                if not self.preamble_file:
-                    self.preamble_file = ""
-            else:
-                self.preamble_file = self._preamble.get_text()
+            buf = self._preamble.get_buffer()
+            self.preamble = buf.get_text(buf.get_start_iter(),
+                                     buf.get_end_iter(), include_hidden_chars=False)
 
             if self.scale_factor is not None:
                 self.scale_factor = self._scale_adj.get_value()
             
             try:
-                self.callback(self.text, self.preamble_file, self.scale_factor)
-            except StandardError, e:
+                self.callback(self.text, self.preamble, self.scale_factor)
+            except Exception as e:
                 err_msg = traceback.format_exc()
                 dlg = Gtk.Dialog("Textext Error", self._window, 
                                  Gtk.DialogFlags.MODAL)
@@ -243,9 +237,9 @@ if USE_GTK:
 elif USE_TK:
     class AskText(object):
         """GUI for editing TexText objects"""
-        def __init__(self, text, preamble_file, scale_factor):
+        def __init__(self, text, preamble, scale_factor):
             self.text = text
-            self.preamble_file = preamble_file
+            self.preamble = preamble
             self.scale_factor = scale_factor
             self.callback = None
     
@@ -262,7 +256,7 @@ elif USE_TK:
             label.pack(pady=2, padx=5, side="left", anchor="w")
             self._preamble = Tk.Entry(box)
             self._preamble.pack(expand=True, fill="x", pady=2, padx=5, side="right")
-            self._preamble.insert(Tk.END, self.preamble_file)
+            self._preamble.insert(Tk.END, self.preamble)
             box.pack(fill="x", expand=True)
             
             box = Tk.Frame(self._frame)
@@ -294,15 +288,15 @@ elif USE_TK:
             
             root.mainloop()
             
-            self.callback(self.text, self.preamble_file, self.scale_factor)
-            return self.text, self.preamble_file, self.scale_factor
+            self.callback(self.text, self.preamble, self.scale_factor)
+            return self.text, self.preamble, self.scale_factor
 
         def cb_cancel(self):
             raise SystemExit(1)
     
         def cb_ok(self):
             self.text = self._text.get(1.0, Tk.END)
-            self.preamble_file = self._preamble.get()
+            self.preamble = self._preamble.get()
             if self.scale_factor is not None:
                 self.scale_factor = self._scale.get()
             self._frame.quit()
@@ -320,15 +314,15 @@ class TexText(inkex.Effect):
 
         self.settings = Settings()
         
-        self.OptionParser.add_option(
-            "-t", "--text", action="store", type="string",
+        self.arg_parser.add_argument(
+            "-t", "--text", action="store", type=str,
             dest="text", default=None)
-        self.OptionParser.add_option(
-            "-p", "--preamble-file", action="store", type="string",
-            dest="preamble_file",
+        self.arg_parser.add_argument(
+            "-p", "--preamble", action="store", type=str,
+            dest="preamble",
             default=self.settings.get('preamble', str, ""))
-        self.OptionParser.add_option(
-            "-s", "--scale-factor", action="store", type="float",
+        self.arg_parser.add_argument(
+            "-s", "--scale-factor", action="store", type=float,
             dest="scale_factor",
             default=self.settings.get('scale', float, 1.0))
     
@@ -345,7 +339,7 @@ class TexText(inkex.Effect):
                 conv_cls.available()
                 converter_cls = conv_cls
                 break
-            except StandardError, e:
+            except StandardError as e:
                 converter_errors.append("%s: %s" % (conv_cls.__name__, str(e)))
         
         if not converter_cls:
@@ -353,7 +347,7 @@ class TexText(inkex.Effect):
                                % ';\n'.join(converter_errors))
         
         # Find root element
-        old_node, text, preamble_file = self.get_old()
+        old_node, text, preamble = self.get_old()
         
         # Ask for TeX code
         if self.options.text is None:
@@ -363,33 +357,27 @@ class TexText(inkex.Effect):
             else:
                 scale_factor = self.options.scale_factor
 
-            if not preamble_file:
-                preamble_file = self.options.preamble_file
+            if not preamble:
+                preamble = self.options.preamble
 
-            if not os.path.isfile(preamble_file):
-                preamble_file = ""
-            
-            asker = AskText(text, preamble_file, scale_factor)
+            asker = AskText(text, preamble, scale_factor)
             asker.ask(lambda t, p, s: self.do_convert(t, p, s,
                                                       converter_cls, old_node))
         else:
             self.do_convert(self.options.text,
-                            self.options.preamble_file,
+                            self.options.preamble,
                             self.options.scale_factor, converter_cls, old_node)
 
-    def do_convert(self, text, preamble_file, scale_factor, converter_cls,
+    def do_convert(self, text, preamble, scale_factor, converter_cls,
                    old_node):
         
         if not text:
             return
 
-        if isinstance(text, unicode):
-            text = text.encode('utf-8')
-        
         # Convert
         converter = converter_cls(self.document)
         try:
-            new_node = converter.convert(text, preamble_file, scale_factor)
+            new_node = converter.convert(text, preamble, scale_factor)
         finally:
             converter.finish()
         
@@ -399,9 +387,8 @@ class TexText(inkex.Effect):
         # Insert into document
 
         # -- Set textext attribs
-        new_node.attrib['{%s}text'%TEXTEXT_NS] = text.encode('string-escape')
-        new_node.attrib['{%s}preamble'%TEXTEXT_NS] = \
-                                       preamble_file.encode('string-escape')
+        new_node.attrib['{%s}text'%TEXTEXT_NS] = text.encode()
+        new_node.attrib['{%s}preamble'%TEXTEXT_NS] = preamble.encode()
 
         # -- Copy transform
         try:
@@ -426,8 +413,7 @@ class TexText(inkex.Effect):
         self.replace_node(old_node, new_node)
 
         # -- Save settings
-        if os.path.isfile(preamble_file):
-            self.settings.set('preamble', preamble_file)
+        self.settings.set('preamble', preamble)
         if scale_factor is not None:
             self.settings.set('scale', scale_factor)
         self.settings.save()
@@ -441,19 +427,19 @@ class TexText(inkex.Effect):
         """
 
         for i in self.options.ids:
-            node = self.selected[i]
+            node = self.svg.selected[i]
             if node.tag != '{%s}g' % SVG_NS: continue
             
             if '{%s}text'%TEXTEXT_NS in node.attrib:
                 # starting from 0.2, use namespaces
                 return (node,
-                        node.attrib.get('{%s}text'%TEXTEXT_NS, '').decode('string-escape'),
-                        node.attrib.get('{%s}preamble'%TEXTEXT_NS, '').decode('string-escape'))
+                        node.attrib.get('{%s}text'%TEXTEXT_NS, ''),
+                        node.attrib.get('{%s}preamble'%TEXTEXT_NS, ''))
             elif '{%s}text'%SVG_NS in node.attrib:
                 # < 0.2 backward compatibility
                 return (node,
-                        node.attrib.get('{%s}text'%SVG_NS, '').decode('string-escape'),
-                        node.attrib.get('{%s}preamble'%SVG_NS, '').decode('string-escape'))
+                        node.attrib.get('{%s}text'%SVG_NS, ''),
+                        node.attrib.get('{%s}preamble'%SVG_NS, ''))
         return None, "", ""
 
     def replace_node(self, old_node, new_node):
@@ -462,7 +448,7 @@ class TexText(inkex.Effect):
         in self.document.
         """
         if old_node is None:
-            self.current_layer.append(new_node)
+            self.svg.get_current_layer().append(new_node)
         else:
             parent = old_node.getparent()
             parent.remove(old_node)
@@ -526,18 +512,13 @@ class Settings(object):
             finally:
                 key.Close()
         else:
+            import json
             try:
-                f = open(self.filename, 'r')
+                with open(self.filename, 'r') as f:
+                    self.values = json.load(f)
             except (IOError, OSError):
                 return
-            try:
-                self.values = {}
-                for line in f.read().split("\n"):
-                    if not '=' in line: continue
-                    k, v = line.split("=", 1)
-                    self.values[k.strip()] = v.strip()
-            finally:
-                f.close()
+
     
     def save(self):
         if USE_WINDOWS:
@@ -553,17 +534,13 @@ class Settings(object):
             finally:
                 key.Close()
         else:
+            import json
             d = os.path.dirname(self.filename)
             if not os.path.isdir(d):
                 os.makedirs(d)
+            with open(self.filename, 'w') as f:
+                json.dump(self.values, f)
             
-            f = open(self.filename, 'w')
-            try:
-                data = '\n'.join(["%s=%s" % (k,v)
-                                  for k,v in self.values.iteritems()])
-                f.write(data)
-            finally:
-                f.close()
     
     def get(self, key, typecast, default=None):
         try:
@@ -579,53 +556,27 @@ class Settings(object):
 # LaTeX converters
 #------------------------------------------------------------------------------
 
-try:
-    import subprocess
+import subprocess
 
-    def exec_command(cmd, ok_return_value=0, combine_error=False):
-        """
-        Run given command, check return value, and return
-        concatenated stdout and stderr.
-        """
-        try:
-            p = subprocess.Popen(cmd,
-                                 stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE,
-                                 stdin=subprocess.PIPE)
-            out, err = p.communicate()
-        except OSError, e:
-            raise RuntimeError("Command %s failed: %s" % (' '.join(cmd), e))
-        
-        if ok_return_value is not None and p.returncode != ok_return_value:
-            raise RuntimeError("Command %s failed (code %d): %s"
-                               % (' '.join(cmd), p.returncode, out + err))
-        return out + err
-  
-except ImportError:
-
-    # Python < 2.4 ...
-    import popen2
+def exec_command(cmd, ok_return_value=0, combine_error=False):
+    """
+    Run given command, check return value, and return
+    concatenated stdout and stderr.
+    """
+    try:
+        p = subprocess.Popen(cmd,
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE)
+        out, err = p.communicate()
+    except OSError as e:
+        raise RuntimeError("Command %s failed: %s" % (' '.join(cmd), e))
     
-    def exec_command(cmd, ok_return_value=0, combine_error=False):
-        """
-        Run given command, check return value, and return
-        concatenated stdout and stderr.
-        """
-        
-        # XXX: unix-only!
-
-        try:
-            p = popen2.Popen4(cmd, True)
-            p.tochild.close()
-            returncode = p.wait() >> 8
-            out = p.fromchild.read()
-        except OSError, e:
-            raise RuntimeError("Command %s failed: %s" % (' '.join(cmd), e))
-        
-        if ok_return_value is not None and returncode != ok_return_value:
-            raise RuntimeError("Command %s failed (code %d): %s"
-                               % (' '.join(cmd), returncode, out))
-        return out
+    if ok_return_value is not None and p.returncode != ok_return_value:
+        raise RuntimeError("Command %s failed (code %d): %s"
+                           % (' '.join(cmd), p.returncode, out + err))
+    return out + err
+  
 
 if USE_WINDOWS:
     # Try to add some commonly needed paths to PATH
@@ -656,13 +607,13 @@ class LatexConverterBase(object):
         self.tmp_path = tempfile.mkdtemp()
         self.tmp_base = 'tmp'
 
-    def convert(self, latex_text, preamble_file, scale_factor):
+    def convert(self, latex_text, preamble, scale_factor):
         """
         Return an XML node containing latex text
 
         :Parameters:
           - `latex_text`: Latex code to use
-          - `preamble_file`: Name of a preamble file to include
+          - `preamble`: a preamble include
           - `scale_factor`: Scale factor to use if object doesn't have
                             a ``transform`` attribute.
 
@@ -693,17 +644,10 @@ class LatexConverterBase(object):
         return os.path.join(self.tmp_path,
                             self.tmp_base + '.' + suffix)
 
-    def tex_to_pdf(self, latex_text, preamble_file):
+    def tex_to_pdf(self, latex_text, preamble):
         """
         Create a PDF file from latex text
         """
-        
-        # Read preamble
-        preamble = ""
-        if os.path.isfile(preamble_file):
-            f = open(preamble_file, 'r')
-            preamble += f.read()
-            f.close()
         
         # Options pass to LaTeX-related commands
         latexOpts = ['-interaction=nonstopmode',
@@ -748,11 +692,11 @@ class LatexConverterBase(object):
             os.rmdir(filename)
 
 class PdfConverterBase(LatexConverterBase):
-    def convert(self, latex_text, preamble_file, scale_factor):
+    def convert(self, latex_text, preamble, scale_factor):
         cwd = os.getcwd()
         try:
             os.chdir(self.tmp_path)
-            self.tex_to_pdf(latex_text, preamble_file)
+            self.tex_to_pdf(latex_text, preamble)
             self.pdf_to_svg()
         finally:
             os.chdir(cwd)
@@ -876,7 +820,7 @@ class Pdf2Svg(PdfConverterBase):
 
     def convert(self, *a, **kw):
         # compute hash for generating unique ids for sub-elements
-        self.hash = md5.new('%s%s' % (a, kw)).hexdigest()[:8]
+        self.hash = hashlib.md5(('%s%s' % (a, kw)).encode()).hexdigest()[:8]
         return PdfConverterBase.convert(self, *a, **kw)
 
     def pdf_to_svg(self):
@@ -935,4 +879,4 @@ CONVERTERS = [Pdf2Svg, PstoeditPlotSvg, SkConvert]
 
 if __name__ == "__main__":
     e = TexText()
-    e.affect()
+    e.run()
