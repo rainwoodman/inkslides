@@ -7,9 +7,13 @@
   <dependency type="executable" location="extensions">inkex.py</dependency>
   <dependency type="executable" location="extensions">inkslides.py</dependency>
   <param name="help" type="description">The objects on current layer will be used to define slides.</param>
-  <param name="direction" type="enum">
+  <param name="direction" type="enum" gui-text="Direction">
       <item value="lr-tb">left->right, then top->bottom</item>
       <item value="tb-lr">top->bottom, then left->right</item>
+  </param>
+  <param name="hidden-slides-fill" type="color"
+      gui-text="Fill color of hidden slides" appearance="colorbutton">
+  green
   </param>
   <effect>
     <object-type>all</object-type>

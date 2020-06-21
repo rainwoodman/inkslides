@@ -24,7 +24,10 @@ class Inkslides(inkex.Effect):
         self.model = None
         self.arg_parser.add_argument('-d', '--direction', 
                 action='store', type=str, dest='direction',
-                default="left-right")
+                default="lr-tb", choices=["lr-tb", "tb-lr"])
+        self.arg_parser.add_argument('-f', '--hidden-slides-fill', 
+                action='store', type=inkex.Color, dest='hidden_slides_fill',
+                default="#00ff00")
 
     def style_path(self, node):
         style = simplestyle.parseStyle(node.get("style"))
@@ -95,6 +98,7 @@ class Inkslides(inkex.Effect):
         scriptnode.text = javascript
         self.document.getroot().set("inkslides-control-layer", layer.get("id"))
         self.document.getroot().set("inkslides-control-direction", self.options.direction)
+        self.document.getroot().set("inkslides-hidden-slides-fill", self.options.hidden_slides_fill)
 
     def findLayerNode(self, node):
         if node.get(inkex.addNS('groupmode','inkscape')) == 'layer':

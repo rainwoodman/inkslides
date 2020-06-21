@@ -37,6 +37,13 @@ var slides = slides || {};
         );
     };
 
+    function nameToRGB(name) {
+        // Idea from https://css-tricks.com/converting-color-spaces-in-javascript/
+        var fake = document.createElementNS(SVG_NS, "rect");
+        fake.style.color = name;
+        return fake.style.color;
+    }
+
     function setOSDstyle(element) {
         element.style.fillOpacity = '0.50';
         element.style.stroke = "green";
@@ -134,13 +141,14 @@ var slides = slides || {};
         /* find the control layer */
         controlLayerId = svgRoot.getAttribute("inkslides-control-layer") || "slides-control";
         controlDirection = svgRoot.getAttribute("inkslides-control-direction") || "left-right";
-        controlPathId = svgRoot.getAttribute("inkslides-control-path") || "slides-path";
+        // controlPathId = svgRoot.getAttribute("inkslides-control-path") || "slides-path";
         controlLayer = svgRoot.querySelector("g[id=" + controlLayerId + "]");
         /* hide the control layer */
         controlLayer.setAttribute("style", "visibility:hidden;");
+        hiddenSlidesFill = nameToRGB(svgRoot.getAttribute("inkslides-hidden-slides-fill"));
 
         slides = controlLayer.querySelectorAll("*");
-        this.slides = sortSlidesByPosition(this, slides, controlDirection);
+        this.slides = sortSlidesByPosition(this, slides, controlDirection, hiddenSlidesFill);
 
         /* set default size and show the first slide */
         this.currentSlide = 0;
@@ -363,7 +371,7 @@ var slides = slides || {};
         viewer.currentSlide = slideid;
     };
 
-    function sortSlidesByPosition(viewer, slides, direction) {
+    function sortSlidesByPosition(viewer, slides, direction, hiddenSlidesFill) {
         var arr = [];
         var i;
         var n;
@@ -372,6 +380,10 @@ var slides = slides || {};
                 /* If the object has no BBox then skip it.*/
                 viewer.getSlideBBox(n);
             } catch (e) {
+                continue;
+            }
+            console.log(n.style.fill, hiddenSlidesFill);
+            if (n.style.fill == hiddenSlidesFill) {
                 continue;
             }
             n.style.visibility = "hidden";
