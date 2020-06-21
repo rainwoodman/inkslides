@@ -457,8 +457,8 @@ window.addEventListener("load", function() {
         }
     }, false);
 
-    document.addEventListener("keypress", function(event) {
-//        console.log(event);
+    document.addEventListener("keydown", function(event) {
+    //    console.log(event);
         var keyCode = event.charCode || event.keyCode;
         if (viewer.processInput(keyCode))
             event.preventDefault();
