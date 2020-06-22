@@ -113,12 +113,14 @@ if USE_GTK:
             label2 = Gtk.Label(label=u"Scale factor:")
             label3 = Gtk.Label(label=u"Text:")
 
+            provider = Gtk.CssProvider()
+            provider.load_from_data(b"textview { font-family: Monospace; font-size: 11pt; }")
+
             lang_manager = GtkSource.LanguageManager.get_default()
-            font = Pango.FontDescription.from_string("mono")
             latex_language = lang_manager.get_language("latex")
 
             self._preamble = GtkSource.View()
-            self._preamble.get_pango_context().set_font_description(font)
+            self._preamble.get_style_context().add_provider(provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
             self._preamble.get_buffer().set_language(latex_language)
             self._preamble.get_buffer().set_text(self.preamble)
             
@@ -126,7 +128,10 @@ if USE_GTK:
             swp.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             swp.set_shadow_type(Gtk.ShadowType.IN)
             swp.add(self._preamble)
-
+            swp.props.valign = Gtk.Align.FILL
+            swp.props.halign = Gtk.Align.FILL
+            swp.props.vexpand = True
+            swp.props.hexpand = True
             self._scale_adj = Gtk.Adjustment(lower=0.01, upper=100,
                                              step_increment=0.1, page_increment=1)
             self._scale = Gtk.SpinButton(adjustment=self._scale_adj, digits=2)
@@ -138,14 +143,18 @@ if USE_GTK:
                 self._scale.set_sensitive(False)
             
             self._text = GtkSource.View()
-            self._text.get_pango_context().set_font_description(font)
             self._text.get_buffer().set_language(latex_language)
             self._text.get_buffer().set_text(self.text)
+            self._text.get_style_context().add_provider(provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
             swt = Gtk.ScrolledWindow()
             swt.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             swt.set_shadow_type(Gtk.ShadowType.IN)
             swt.add(self._text)
+            swt.props.valign = Gtk.Align.FILL
+            swt.props.halign = Gtk.Align.FILL
+            swt.props.vexpand = True
+            swt.props.hexpand = True
             
             self._ok = Gtk.Button.new_with_mnemonic(label=Gtk.STOCK_OK)
             self._cancel = Gtk.Button.new_with_mnemonic(label=Gtk.STOCK_CANCEL)
@@ -160,9 +169,9 @@ if USE_GTK:
             table.attach(swt,            1,2,8,8)
             table.attach(self._ok,            0,10,1,3)
             table.attach(self._cancel,            5,10,1,3)
-    
+
             window.add(table)
-    
+
             # signals
             window.connect("delete-event", self.cb_delete_event)
             window.connect("key-press-event", self.cb_key_press)
@@ -387,8 +396,8 @@ class TexText(inkex.Effect):
         # Insert into document
 
         # -- Set textext attribs
-        new_node.attrib['{%s}text'%TEXTEXT_NS] = text.encode()
-        new_node.attrib['{%s}preamble'%TEXTEXT_NS] = preamble.encode()
+        new_node.attrib['{%s}text'%TEXTEXT_NS] = text.encode('unicode_escape')
+        new_node.attrib['{%s}preamble'%TEXTEXT_NS] = preamble.encode('unicode_escape')
 
         # -- Copy transform
         try:
@@ -432,9 +441,10 @@ class TexText(inkex.Effect):
             
             if '{%s}text'%TEXTEXT_NS in node.attrib:
                 # starting from 0.2, use namespaces
+                # we store utf8 encoded unicode_escaped string, I think?
                 return (node,
-                        node.attrib.get('{%s}text'%TEXTEXT_NS, ''),
-                        node.attrib.get('{%s}preamble'%TEXTEXT_NS, ''))
+                        node.attrib.get('{%s}text'%TEXTEXT_NS, b'').encode('utf-8').decode('unicode_escape'),
+                        node.attrib.get('{%s}preamble'%TEXTEXT_NS, b'').encode('utf-8').decode('unicode_escape'))
             elif '{%s}text'%SVG_NS in node.attrib:
                 # < 0.2 backward compatibility
                 return (node,

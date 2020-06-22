@@ -3,7 +3,7 @@
   <id>org.ekips.filter.textext</id>
   <dependency type="executable" location="extensions">textext.py</dependency>
   <dependency type="executable" location="extensions">inkex.py</dependency>
-  <effect>
+  <effect implements-custom-gui="true">
     <object-type>all</object-type>
   </effect>
   <script>
